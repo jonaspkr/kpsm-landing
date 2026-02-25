@@ -1,11 +1,12 @@
-FROM node:22-alpine AS builder
+FROM node:22-alpine
 WORKDIR /app
-COPY build.js .
+COPY build.js server.js ./
 COPY content/ content/
 COPY src/ src/
+COPY images/ images/
+COPY admin/ admin/
 RUN mkdir -p images && node build.js
-
-FROM nginx:alpine
-COPY --from=builder /app/dist/ /usr/share/nginx/html/
-COPY images/ /usr/share/nginx/html/images/
-COPY admin/ /usr/share/nginx/html/admin/
+COPY images/ dist/images/
+COPY admin/ dist/admin/
+EXPOSE 8080
+CMD ["node", "server.js"]
