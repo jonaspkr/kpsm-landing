@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: kpsm-landing/kpsm-landing
+  repo: jonaspkr/kpsm-landing
   branch: main
   auth_type: pkce
   app_id: # Will be set after GitHub OAuth app is created
