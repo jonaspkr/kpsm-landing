@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KPSM {{footer.year}} — Kaunas Plastic Surgery Meeting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+    :root {
+      --orange: #ff3e07;
+      --orange-light: #ff6438;
+      --lavender: #c8c7ff;
+      --lavender-light: #e4e3ff;
+      --lavender-dim: #a8a7e0;
+      --black: #000000;
+      --white: #ffffff;
+      --gray-50: #f7f7f7;
+      --gray-100: #efefef;
+      --gray-200: #e0e0e0;
+      --gray-400: #999999;
+      --gray-600: #555555;
+      --font: 'Montserrat', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font);
+      font-weight: 300;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    /* --- Reveals --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.25s; }
+    .delay-4 { transition-delay: 0.35s; }
+    .delay-5 { transition-delay: 0.45s; }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 80px);
+    }
+
+    /* ============ NAV ============ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: all 0.4s ease;
+    }
+    nav.scrolled {
+      padding: 14px 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--gray-200);
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-register {
+      padding: 10px 28px;
+      background: var(--orange);
+      color: var(--white) !important;
+      border-radius: 0;
+      transition: all 0.3s ease !important;
+    }
+    .nav-register:hover {
+      background: var(--orange-light) !important;
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+    }
+    /* Lavender blob */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -15%;
+      right: -8%;
+      width: 55%;
+      height: 130%;
+      background: var(--lavender);
+      border-radius: 0 0 0 40%;
+      z-index: 0;
+    }
+    /* Orange accent circle */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 8%;
+      right: 12%;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: var(--orange);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 140px 0 100px;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 32px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 40px;
+      height: 3px;
+      background: var(--orange);
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 6.5vw, 5.8rem);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 10px;
+      max-width: 700px;
+    }
+    .hero h1 .accent {
+      color: var(--orange);
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-weight: 300;
+      color: var(--gray-600);
+      margin-bottom: 48px;
+      max-width: 500px;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .hero-meta-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .hero-meta-value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--orange);
+      color: var(--white);
+      padding: 16px 36px;
+      font-family: var(--font);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover { background: var(--orange-light); gap: 16px; }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--black);
+      padding: 16px 36px;
+      font-family: var(--font);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid var(--black);
+      transition: all 0.3s ease;
+    }
+    .btn-outline:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+    .btn-arrow {
+      width: 16px; height: 16px;
+      transition: transform 0.3s;
+    }
+    .btn-primary:hover .btn-arrow,
+    .btn-outline:hover .btn-arrow { transform: translateX(3px); }
+
+    /* Hero stats */
+    .hero-stats {
+      display: flex;
+      gap: 0;
+      margin-top: 64px;
+    }
+    .hero-stat {
+      padding: 28px 40px;
+      border: 1px solid var(--gray-200);
+      border-right: none;
+      text-align: center;
+      min-width: 140px;
+    }
+    .hero-stat:last-child { border-right: 1px solid var(--gray-200); }
+    .hero-stat-num {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--orange);
+      line-height: 1.1;
+    }
+    .hero-stat-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-top: 4px;
+    }
+
+    /* ============ SPEAKERS ============ */
+    .speakers {
+      padding: 120px 0;
+      background: var(--gray-50);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .section-link {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.3s;
+      flex-shrink: 0;
+    }
+    .section-link:hover { gap: 14px; }
+
+    .speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .speaker-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--white);
+      transition: all 0.4s ease;
+    }
+    .speaker-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+    .speaker-photo {
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+    .speaker-photo-inner {
+      width: 100%;
+      height: 100%;
+      background: var(--lavender-light);
+      position: relative;
+      transition: transform 0.6s ease;
+    }
+    .speaker-photo-inner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 35%, rgba(200,199,255,0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 70%, rgba(255,62,7,0.06) 0%, transparent 40%);
+    }
+    .speaker-card:hover .speaker-photo-inner { transform: scale(1.04); }
+    .speaker-info { padding: 24px; }
+    .speaker-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .speaker-title {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .speaker-tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      padding: 5px 12px;
+      background: rgba(255,62,7,0.08);
+    }
+
+    /* ============ TRACKS ============ */
+    .tracks {
+      padding: 120px 0;
+      background: var(--black);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Large decorative KPSM text */
+    .tracks-bg-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 28vw;
+      font-weight: 700;
+      color: rgba(255,255,255,0.02);
+      letter-spacing: -0.04em;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .tracks-header {
+      text-align: center;
+      margin-bottom: 72px;
+      position: relative;
+      z-index: 1;
+    }
+    .tracks .section-label { color: var(--lavender); }
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      position: relative;
+      z-index: 1;
+    }
+    .track-card {
+      padding: 48px 36px;
+      background: var(--black);
+      position: relative;
+      transition: all 0.4s ease;
+    }
+    .track-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .track-card:hover::before { transform: scaleX(1); }
+    .track-card:hover { background: rgba(255,255,255,0.04); }
+    .track-num {
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(200,199,255,0.15);
+      line-height: 1;
+      margin-bottom: 20px;
+      transition: color 0.4s;
+    }
+    .track-card:hover .track-num { color: var(--orange); }
+    .track-card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .track-card p {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+    }
+    .track-count {
+      margin-top: 24px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lavender-dim);
+    }
+
+    /* ============ TESTIMONIALS ============ */
+    .testimonials {
+      padding: 120px 0;
+      background: var(--white);
+    }
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+    .testimonial {
+      padding: 40px;
+      background: var(--gray-50);
+      position: relative;
+      transition: all 0.4s ease;
+      border-bottom: 3px solid transparent;
+    }
+    .testimonial:nth-child(2) { margin-top: 28px; }
+    .testimonial:hover {
+      border-bottom-color: var(--orange);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+    }
+    .testimonial-quote {
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 0.8;
+      color: var(--lavender);
+      margin-bottom: 16px;
+    }
+    .testimonial p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--gray-600);
+      margin-bottom: 28px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--lavender-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .testimonial-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .testimonial-role {
+      font-size: 0.72rem;
+      font-weight: 300;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    /* ============ VENUE ============ */
+    .venue {
+      padding: 120px 0;
+      background: var(--gray-50);
+      position: relative;
+      overflow: hidden;
+    }
+    .venue-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .venue-visual {
+      height: 480px;
+      position: relative;
+    }
+    .venue-img {
+      width: 100%;
+      height: 100%;
+      background: var(--lavender-light);
+      position: relative;
+      overflow: hidden;
+    }
+    .venue-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 40%, rgba(255,62,7,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, rgba(200,199,255,0.3) 0%, transparent 50%);
+    }
+    /* Orange corner accent */
+    .venue-visual::before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      width: 100px;
+      height: 100px;
+      background: var(--orange);
+      z-index: 1;
+    }
+    .venue-text .section-label { margin-bottom: 12px; }
+    .venue-text h2 {
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .venue-desc {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 36px;
+    }
+    .venue-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .venue-detail {
+      padding: 18px;
+      background: var(--white);
+      border-left: 3px solid var(--lavender);
+    }
+    .venue-detail-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 4px;
+    }
+    .venue-detail-value {
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    /* ============ CTA ============ */
+    .cta-section {
+      padding: 140px 0;
+      text-align: center;
+      background: var(--orange);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 60%;
+      height: 200%;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+    .cta-desc {
+      font-size: 1rem;
+      font-weight: 300;
+      max-width: 480px;
+      margin: 0 auto 20px;
+      line-height: 1.8;
+      opacity: 0.9;
+      position: relative;
+    }
+    .cta-pricing {
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .cta-price {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .cta-price-note {
+      font-size: 0.8rem;
+      font-weight: 300;
+      margin-top: 4px;
+      opacity: 0.8;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--orange);
+      padding: 18px 44px;
+      font-family: var(--font);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .btn-white:hover {
+      background: var(--black);
+      color: var(--white);
+      gap: 16px;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      padding: 72px 0 40px;
+      background: var(--black);
+      color: var(--white);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 60px;
+    }
+    .footer-logo img {
+      height: 48px;
+      width: auto;
+      filter: invert(1);
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      max-width: 280px;
+      line-height: 1.7;
+    }
+    .footer-col h4 {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--lavender-dim);
+      margin-bottom: 20px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .footer-col a {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-bottom p {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-badges {
+      display: flex;
+      gap: 12px;
+    }
+    .footer-badge {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1000px) {
+      .speakers-grid { grid-template-columns: repeat(2, 1fr); }
+      .tracks-grid { grid-template-columns: 1fr; gap: 0; }
+      .venue-inner { grid-template-columns: 1fr; gap: 48px; }
+      .venue-visual { height: 320px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: clamp(2.4rem, 10vw, 3.6rem); }
+      .hero::before { width: 100%; right: 0; border-radius: 0; top: auto; bottom: 0; height: 30%; }
+      .hero::after { width: 100px; height: 100px; bottom: 4%; right: 6%; }
+      .hero-meta { flex-direction: column; gap: 16px; }
+      .hero-stats { flex-direction: column; }
+      .hero-stat { border-right: 1px solid var(--gray-200); border-bottom: none; }
+      .hero-stat:last-child { border-bottom: 1px solid var(--gray-200); }
+      .speakers-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonial:nth-child(2) { margin-top: 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .venue-details { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 500px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav id="nav">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <img src="images/KPSM logo mazas juodas.png" alt="KPSM">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#speakers">Speakers</a></li>
+        <li><a href="#programme">Programme</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#register" class="nav-register">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">{{hero.badge}}</div>
+        <h1 class="reveal delay-1">{{hero.title_line1}}<br>{{hero.title_line2}}<br><span class="accent">{{hero.title_accent}}</span></h1>
+        <p class="hero-sub reveal delay-2">{{hero.subtitle}}</p>
+        <div class="hero-meta reveal delay-3">
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Location</span>
+            <span class="hero-meta-value">{{hero.location}}</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">Duration</span>
+            <span class="hero-meta-value">{{hero.duration}}</span>
+          </div>
+          <div class="hero-meta-item">
+            <span class="hero-meta-label">CME Credits</span>
+            <span class="hero-meta-value">{{hero.credits}}</span>
+          </div>
+        </div>
+        <div class="hero-actions reveal delay-4">
+          <a href="#register" class="btn-primary">
+            Register now
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#programme" class="btn-outline">
+            View programme
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="hero-stats reveal delay-5">
+          <div class="hero-stat">
+            <div class="hero-stat-num">{{hero.stat_speakers}}</div>
+            <div class="hero-stat-label">Speakers</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">{{hero.stat_countries}}</div>
+            <div class="hero-stat-label">Countries</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">{{hero.stat_attendees}}</div>
+            <div class="hero-stat-label">Attendees</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPEAKERS ===== -->
+  <section class="speakers" id="speakers">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-label">Keynote Faculty</p>
+          <h2 class="section-title">World-class speakers</h2>
+        </div>
+        <a href="#" class="section-link">
+          All speakers
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="speakers-grid">
+{{speakers}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRACKS ===== -->
+  <section class="tracks" id="programme">
+    <div class="tracks-bg-text">KPSM</div>
+    <div class="container">
+      <div class="tracks-header reveal">
+        <p class="section-label">Scientific Programme</p>
+        <h2 class="section-title">Six specialised tracks</h2>
+      </div>
+      <div class="tracks-grid">
+{{tracks}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="testimonials-header reveal">
+        <p class="section-label">Past Attendees</p>
+        <h2 class="section-title">Voices from the meeting</h2>
+      </div>
+      <div class="testimonials-grid">
+{{testimonials}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VENUE ===== -->
+  <section class="venue" id="venue">
+    <div class="container">
+      <div class="venue-inner">
+        <div class="venue-visual reveal">
+          <div class="venue-img"></div>
+        </div>
+        <div class="venue-text reveal delay-2">
+          <p class="section-label">The Venue</p>
+          <h2>{{venue.title}}</h2>
+          <p class="venue-desc">{{venue.description}}</p>
+          <div class="venue-details">
+            <div class="venue-detail">
+              <div class="venue-detail-label">Venue</div>
+              <div class="venue-detail-value">{{venue.venue_name}}</div>
+            </div>
+            <div class="venue-detail">
+              <div class="venue-detail-label">Airport</div>
+              <div class="venue-detail-value">{{venue.airport}}</div>
+            </div>
+            <div class="venue-detail">
+              <div class="venue-detail-label">Getting There</div>
+              <div class="venue-detail-value">{{venue.transport}}</div>
+            </div>
+            <div class="venue-detail">
+              <div class="venue-detail-label">Hotels</div>
+              <div class="venue-detail-value">{{venue.hotels}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section" id="register">
+    <div class="container">
+      <div class="reveal">
+        <p class="section-label" style="color: rgba(255,255,255,0.7);">Secure Your Place</p>
+        <h2>{{cta.heading}}</h2>
+        <p class="cta-desc">{{cta.description}}</p>
+        <div class="cta-pricing">
+          <div class="cta-price">{{cta.price}}</div>
+          <div class="cta-price-note">{{cta.price_note}}</div>
+        </div>
+        <a href="{{cta.button_link}}" class="btn-white">
+          {{cta.button_text}}
+          <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="images/KPSM logo pilnas juodas.png" alt="Kaunas Plastic Surgery Meeting">
+          </div>
+          <p>{{footer.brand_text}}</p>
+        </div>
+        <div class="footer-col">
+          <h4>Meeting</h4>
+          <ul>
+            <li><a href="#">Programme</a></li>
+            <li><a href="#">Faculty</a></li>
+            <li><a href="#">Masterclasses</a></li>
+            <li><a href="#">Exhibition</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Attend</h4>
+          <ul>
+            <li><a href="#">Registration</a></li>
+            <li><a href="#">Travel & Hotels</a></li>
+            <li><a href="#">Visa Information</a></li>
+            <li><a href="#">CME Credits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:{{footer.email}}">{{footer.email}}</a></li>
+            <li><a href="#">Sponsorship</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Past Meetings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {{footer.year}} Kaunas Plastic Surgery Meeting. All rights reserved.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">CME Accredited</span>
+          <span class="footer-badge">EACCME</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const nav = document.getElementById('nav');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          nav.classList.toggle('scrolled', window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  </script>
+</body>
+</html>

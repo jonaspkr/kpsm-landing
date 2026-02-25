@@ -1,0 +1,98 @@
+backend:
+  name: github
+  repo: kpsm-landing/kpsm-landing
+  branch: main
+  auth_type: pkce
+  app_id: # Will be set after GitHub OAuth app is created
+
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: site
+    label: Site Content
+    files:
+      - name: content
+        label: All Content
+        file: content/site.json
+        format: json
+        fields:
+          # ── Hero Section ──
+          - name: hero
+            label: Hero Section
+            widget: object
+            fields:
+              - { name: badge, label: Badge Text, widget: string }
+              - { name: title_line1, label: Title Line 1, widget: string }
+              - { name: title_line2, label: Title Line 2, widget: string }
+              - { name: title_accent, label: Title Accent Word, widget: string }
+              - { name: subtitle, label: Subtitle, widget: text }
+              - { name: location, label: Location, widget: string }
+              - { name: duration, label: Duration, widget: string }
+              - { name: credits, label: CME Credits, widget: string }
+              - { name: stat_speakers, label: "Stat: Speakers", widget: string }
+              - { name: stat_countries, label: "Stat: Countries", widget: string }
+              - { name: stat_attendees, label: "Stat: Attendees", widget: string }
+
+          # ── Speakers ──
+          - name: speakers
+            label: Speakers
+            widget: list
+            fields:
+              - { name: name, label: Name, widget: string }
+              - { name: title, label: Title / Affiliation, widget: string }
+              - { name: tag, label: Tag (e.g. Keynote), widget: string }
+              - { name: photo, label: Photo, widget: image, required: false }
+
+          # ── Tracks ──
+          - name: tracks
+            label: Programme Tracks
+            widget: list
+            fields:
+              - { name: num, label: "Track Number (01, 02…)", widget: string }
+              - { name: name, label: Track Name, widget: string }
+              - { name: description, label: Description, widget: text }
+              - { name: sessions, label: "Sessions (e.g. 42 Sessions)", widget: string }
+
+          # ── Testimonials ──
+          - name: testimonials
+            label: Testimonials
+            widget: list
+            fields:
+              - { name: quote, label: Quote, widget: text }
+              - { name: name, label: Name, widget: string }
+              - { name: role, label: Role / Location, widget: string }
+              - { name: initial, label: Avatar Initial, widget: string }
+
+          # ── Venue ──
+          - name: venue
+            label: Venue
+            widget: object
+            fields:
+              - { name: title, label: Venue Title, widget: string }
+              - { name: description, label: Description, widget: text }
+              - { name: venue_name, label: Venue Name, widget: string }
+              - { name: airport, label: Airport Info, widget: string }
+              - { name: transport, label: Transport Info, widget: string }
+              - { name: hotels, label: Hotels Info, widget: string }
+
+          # ── Call to Action ──
+          - name: cta
+            label: Registration CTA
+            widget: object
+            fields:
+              - { name: heading, label: Heading, widget: string }
+              - { name: description, label: Description, widget: text }
+              - { name: price, label: Price, widget: string }
+              - { name: price_note, label: Price Note, widget: string }
+              - { name: button_text, label: Button Text, widget: string }
+              - { name: button_link, label: Button Link, widget: string }
+
+          # ── Footer ──
+          - name: footer
+            label: Footer
+            widget: object
+            fields:
+              - { name: brand_text, label: Brand Description, widget: text }
+              - { name: email, label: Contact Email, widget: string }
+              - { name: year, label: Year, widget: string }

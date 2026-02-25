@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "badge": "Kaunas, Lithuania",
+    "title_line1": "Kaunas",
+    "title_line2": "Plastic Surgery",
+    "title_accent": "Meeting",
+    "subtitle": "Where innovation meets precision. The premier gathering of plastic and reconstructive surgery professionals in the Baltics.",
+    "location": "Kaunas, Lithuania",
+    "duration": "3 Days, 6 Tracks",
+    "credits": "Up to 24 EACCME",
+    "stat_speakers": "120+",
+    "stat_countries": "35",
+    "stat_attendees": "1,800"
+  },
+  "speakers": [
+    {
+      "name": "Prof. Elise Bergström",
+      "title": "Chair of Aesthetic Surgery, Karolinska Institute",
+      "tag": "Opening Keynote",
+      "photo": ""
+    },
+    {
+      "name": "Dr. Alessio Marchetti",
+      "title": "Director, Milan Institute of Reconstructive Medicine",
+      "tag": "Masterclass",
+      "photo": ""
+    },
+    {
+      "name": "Dr. Yuna Park",
+      "title": "Pioneer in Minimally Invasive Technique, Seoul",
+      "tag": "Innovation Panel",
+      "photo": ""
+    },
+    {
+      "name": "Prof. James Whitfield",
+      "title": "Head of Craniofacial Surgery, Johns Hopkins",
+      "tag": "Plenary Session",
+      "photo": ""
+    }
+  ],
+  "tracks": [
+    {
+      "num": "01",
+      "name": "Facial Aesthetics",
+      "description": "Rhinoplasty advances, non-surgical rejuvenation, fat grafting, and facial harmony — from consultation to long-term outcomes.",
+      "sessions": "42 Sessions"
+    },
+    {
+      "num": "02",
+      "name": "Regenerative Medicine",
+      "description": "Stem cell therapy, tissue engineering, PRP protocols, and the frontier of biological reconstruction in clinical practice.",
+      "sessions": "36 Sessions"
+    },
+    {
+      "num": "03",
+      "name": "Body Contouring",
+      "description": "High-definition liposculpture, post-bariatric reconstruction, and the integration of energy-based devices in body aesthetics.",
+      "sessions": "38 Sessions"
+    },
+    {
+      "num": "04",
+      "name": "Digital Surgery",
+      "description": "AI-assisted surgical planning, 3D simulation, robotic technique, and the digital transformation of aesthetic practice.",
+      "sessions": "28 Sessions"
+    },
+    {
+      "num": "05",
+      "name": "Breast Surgery",
+      "description": "Oncoplastic innovation, implant evolution, autologous reconstruction, and patient-centered decision frameworks.",
+      "sessions": "34 Sessions"
+    },
+    {
+      "num": "06",
+      "name": "Ethics & Safety",
+      "description": "Patient consent, complication management, social media responsibility, and the evolving ethical landscape of cosmetic surgery.",
+      "sessions": "22 Sessions"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "KPSM is where the real conversations happen. The masterclasses alone justified the trip — but the hallway discussions between sessions were equally transformative for my practice.",
+      "name": "Dr. Sofia Reyes",
+      "role": "Aesthetic Surgeon, Barcelona",
+      "initial": "S"
+    },
+    {
+      "quote": "The digital surgery track opened my eyes to possibilities I had not considered. I returned home and completely restructured my pre-operative workflow using the 3D planning tools presented.",
+      "name": "Dr. Raj Patel",
+      "role": "Reconstructive Surgeon, London",
+      "initial": "R"
+    },
+    {
+      "quote": "As an early-career surgeon, the mentorship programme at KPSM connected me with leaders who have genuinely shaped my trajectory. The calibre of faculty is unmatched.",
+      "name": "Dr. Lina Hoffmann",
+      "role": "Fellow, Charité Berlin",
+      "initial": "L"
+    }
+  ],
+  "venue": {
+    "title": "Kaunas, Lithuania",
+    "description": "Lithuania's second city and a European Capital of Culture. A vibrant centre of modernist architecture, medical innovation, and warm Baltic hospitality.",
+    "venue_name": "Žalgirio Arena",
+    "airport": "KUN — 20 min transfer",
+    "transport": "Direct flights from major EU hubs",
+    "hotels": "Partner rates available"
+  },
+  "cta": {
+    "heading": "Join us in Kaunas",
+    "description": "Early registration is now open. Includes full meeting access, digital proceedings, welcome reception, and conference dinner.",
+    "price": "€690",
+    "price_note": "Early bird — Full meeting pass",
+    "button_text": "Register now",
+    "button_link": "#"
+  },
+  "footer": {
+    "brand_text": "The premier plastic and reconstructive surgery meeting in the Baltics. Kaunas, Lithuania.",
+    "email": "info@kpsm.lt",
+    "year": "2026"
+  }
+}
