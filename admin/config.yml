@@ -3,7 +3,7 @@ backend:
   repo: jonaspkr/kpsm-landing
   branch: main
   auth_type: pkce
-  app_id: # Will be set after GitHub OAuth app is created
+  app_id: Ov23ligNK26B9i6T4ybc
 
 media_folder: images
 public_folder: /images
