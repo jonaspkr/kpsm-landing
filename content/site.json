@@ -1,41 +1,41 @@
 {
   "hero": {
-    "badge": "Kaunas, Lithuania",
+    "badge": "19–20 June 2026 · Kaunas, Lithuania",
     "title_line1": "Kaunas",
     "title_line2": "Plastic Surgery",
     "title_accent": "Meeting",
-    "subtitle": "Where innovation meets precision. The premier gathering of plastic and reconstructive surgery professionals in the Baltics.",
+    "subtitle": "Face, breasts & body contouring. An international congress bringing together experts for scientific exchange and professional discussion.",
     "location": "Kaunas, Lithuania",
-    "duration": "3 Days, 6 Tracks",
-    "credits": "Up to 24 EACCME",
+    "duration": "2 Days · 19–20 June",
+    "credits": "Gala Dinner Included",
     "stat_speakers": "120+",
     "stat_countries": "35",
     "stat_attendees": "1,800"
   },
   "speakers": [
     {
-      "name": "Prof. Elise Bergström",
-      "title": "Chair of Aesthetic Surgery, Karolinska Institute",
-      "tag": "Opening Keynote",
-      "photo": ""
+      "name": "Dr. Romeu Fadul Jr.",
+      "title": "Plastic Surgeon, Brazil",
+      "tag": "Guest Speaker",
+      "photo": "images/speaker-romeu-fadul.jpg"
     },
     {
-      "name": "Dr. Alessio Marchetti",
-      "title": "Director, Milan Institute of Reconstructive Medicine",
-      "tag": "Masterclass",
-      "photo": ""
+      "name": "Andrius Pajeda",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-andrius-pajeda.jpg"
     },
     {
-      "name": "Dr. Yuna Park",
-      "title": "Pioneer in Minimally Invasive Technique, Seoul",
-      "tag": "Innovation Panel",
-      "photo": ""
+      "name": "Ghassan",
+      "title": "Plastic & Aesthetic Surgeon",
+      "tag": "Faculty",
+      "photo": "images/speaker-ghassan.jpg"
     },
     {
-      "name": "Prof. James Whitfield",
-      "title": "Head of Craniofacial Surgery, Johns Hopkins",
-      "tag": "Plenary Session",
-      "photo": ""
+      "name": "Tautvydas Urbonas",
+      "title": "Plastic Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-tautvydas-urbonas.jpg"
     }
   ],
   "tracks": [
@@ -47,9 +47,9 @@
     },
     {
       "num": "02",
-      "name": "Regenerative Medicine",
-      "description": "Stem cell therapy, tissue engineering, PRP protocols, and the frontier of biological reconstruction in clinical practice.",
-      "sessions": "36 Sessions"
+      "name": "Breast Surgery",
+      "description": "Oncoplastic innovation, implant evolution, autologous reconstruction, and patient-centered decision frameworks.",
+      "sessions": "34 Sessions"
     },
     {
       "num": "03",
@@ -65,9 +65,9 @@
     },
     {
       "num": "05",
-      "name": "Breast Surgery",
-      "description": "Oncoplastic innovation, implant evolution, autologous reconstruction, and patient-centered decision frameworks.",
-      "sessions": "34 Sessions"
+      "name": "Regenerative Medicine",
+      "description": "Stem cell therapy, tissue engineering, PRP protocols, and the frontier of biological reconstruction in clinical practice.",
+      "sessions": "36 Sessions"
     },
     {
       "num": "06",
@@ -106,7 +106,7 @@
   },
   "cta": {
     "heading": "Join us in Kaunas",
-    "description": "Early registration is now open. Includes full meeting access, digital proceedings, welcome reception, and conference dinner.",
+    "description": "Early registration is now open. Includes full meeting access, digital proceedings, welcome reception, and gala dinner.",
     "price": "€690",
     "price_note": "Early bird — Full meeting pass",
     "button_text": "Register now",

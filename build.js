@@ -7,12 +7,12 @@ const template = fs.readFileSync(path.join(__dirname, 'src/template.html'), 'utf
 // Generate speaker cards HTML
 const speakersHtml = content.speakers.map((s, i) => {
   const delay = (i % 4) + 1;
-  const photoStyle = s.photo
-    ? `style="background-image:url('${s.photo}');background-size:cover;background-position:center"`
-    : '';
+  const photoInner = s.photo
+    ? `<img src="${s.photo}" alt="${s.name}" loading="lazy" width="400" height="300">`
+    : `<div class="speaker-photo-inner"></div>`;
   return `
         <div class="speaker-card reveal delay-${delay}">
-          <div class="speaker-photo"><div class="speaker-photo-inner" ${photoStyle}></div></div>
+          <div class="speaker-photo">${photoInner}</div>
           <div class="speaker-info">
             <div class="speaker-name">${s.name}</div>
             <div class="speaker-title">${s.title}</div>
@@ -113,7 +113,7 @@ if (fs.existsSync(adminSrc)) {
 }
 
 // Copy extra pages (privacy, cookies)
-['privacy.html', 'cookies.html'].forEach(f => {
+['privacy.html', 'cookies.html', 'terms.html'].forEach(f => {
   const src = path.join(__dirname, 'src', f);
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(distDir, f));
 });

@@ -53,6 +53,9 @@
   }
   </script>
 
+  <!-- Plausible Analytics (cookieless, no consent needed) -->
+  <script defer data-domain="kpsm-landing.fly.dev" src="https://plausible.io/js/script.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
@@ -90,6 +93,26 @@
     ::selection {
       background: var(--orange);
       color: var(--white);
+    }
+
+    /* --- Accessibility --- */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      z-index: 999;
+      padding: 12px 24px;
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 16px; }
+    *:focus-visible {
+      outline: 2px solid var(--orange);
+      outline-offset: 2px;
     }
 
     /* --- Reveals --- */
@@ -200,7 +223,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 140px 0 100px;
+      padding: 100px 0 40px;
       width: 100%;
     }
     .hero-badge {
@@ -212,7 +235,7 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--orange);
-      margin-bottom: 32px;
+      margin-bottom: 20px;
     }
     .hero-badge::before {
       content: '';
@@ -221,7 +244,7 @@
       background: var(--orange);
     }
     .hero h1 {
-      font-size: clamp(3rem, 6.5vw, 5.8rem);
+      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
       font-weight: 700;
       line-height: 1.0;
       letter-spacing: -0.03em;
@@ -233,16 +256,16 @@
       color: var(--orange);
     }
     .hero-sub {
-      font-size: clamp(1rem, 1.6vw, 1.2rem);
+      font-size: clamp(0.9rem, 1.4vw, 1.1rem);
       font-weight: 300;
       color: var(--gray-600);
-      margin-bottom: 48px;
+      margin-bottom: 28px;
       max-width: 500px;
     }
     .hero-meta {
       display: flex;
       gap: 40px;
-      margin-bottom: 48px;
+      margin-bottom: 28px;
     }
     .hero-meta-item {
       display: flex;
@@ -315,10 +338,10 @@
     .hero-stats {
       display: flex;
       gap: 0;
-      margin-top: 64px;
+      margin-top: 32px;
     }
     .hero-stat {
-      padding: 28px 40px;
+      padding: 20px 36px;
       border: 1px solid var(--gray-200);
       border-right: none;
       text-align: center;
@@ -397,12 +420,19 @@
       position: relative;
       overflow: hidden;
     }
+    .speaker-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .speaker-card:hover .speaker-photo img { transform: scale(1.04); }
     .speaker-photo-inner {
       width: 100%;
       height: 100%;
       background: var(--lavender-light);
       position: relative;
-      transition: transform 0.6s ease;
     }
     .speaker-photo-inner::after {
       content: '';
@@ -412,7 +442,6 @@
         radial-gradient(ellipse at 50% 35%, rgba(200,199,255,0.4) 0%, transparent 50%),
         radial-gradient(ellipse at 50% 70%, rgba(255,62,7,0.06) 0%, transparent 40%);
     }
-    .speaker-card:hover .speaker-photo-inner { transform: scale(1.04); }
     .speaker-info { padding: 24px; }
     .speaker-name {
       font-size: 1.05rem;
@@ -613,7 +642,7 @@
     .venue-img {
       width: 100%;
       height: 100%;
-      background: var(--lavender-light);
+      background: url('images/kaunas-aerial.jpg') center center / cover no-repeat;
       position: relative;
       overflow: hidden;
     }
@@ -621,9 +650,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse at 30% 40%, rgba(255,62,7,0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 70% 70%, rgba(200,199,255,0.3) 0%, transparent 50%);
+      background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 60%);
     }
     /* Orange corner accent */
     .venue-visual::before {
@@ -1056,9 +1083,10 @@
   </style>
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- ===== NAV ===== -->
-  <nav id="nav">
+  <nav id="nav" aria-label="Main navigation">
     <div class="container">
       <a href="#" class="nav-logo">
         <img src="images/KPSM logo mazas juodas.png" alt="KPSM">
@@ -1074,6 +1102,7 @@
   </nav>
 
   <!-- ===== HERO ===== -->
+  <main id="main">
   <section class="hero">
     <div class="container">
       <div class="hero-content">
@@ -1123,7 +1152,7 @@
   </section>
 
   <!-- ===== SPEAKERS ===== -->
-  <section class="speakers" id="speakers">
+  <section class="speakers" id="speakers" aria-label="Speakers">
     <div class="container">
       <div class="section-header reveal">
         <div>
@@ -1142,7 +1171,7 @@
   </section>
 
   <!-- ===== TRACKS ===== -->
-  <section class="tracks" id="programme">
+  <section class="tracks" id="programme" aria-label="Programme">
     <div class="tracks-bg-text">KPSM</div>
     <div class="container">
       <div class="tracks-header reveal">
@@ -1156,7 +1185,7 @@
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
-  <section class="testimonials" id="testimonials">
+  <section class="testimonials" id="testimonials" aria-label="Testimonials">
     <div class="container">
       <div class="testimonials-header reveal">
         <p class="section-label">Past Attendees</p>
@@ -1169,7 +1198,7 @@
   </section>
 
   <!-- ===== VENUE ===== -->
-  <section class="venue" id="venue">
+  <section class="venue" id="venue" aria-label="Venue">
     <div class="container">
       <div class="venue-inner">
         <div class="venue-visual reveal">
@@ -1203,7 +1232,7 @@
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact">
+  <section class="contact" id="contact" aria-label="Contact">
     <div class="container">
       <div class="contact-inner">
         <div class="contact-text reveal">
@@ -1265,7 +1294,7 @@
   </section>
 
   <!-- ===== CTA ===== -->
-  <section class="cta-section" id="register">
+  <section class="cta-section" id="register" aria-label="Registration">
     <div class="container">
       <div class="reveal">
         <p class="section-label" style="color: rgba(255,255,255,0.7);">Secure Your Place</p>
@@ -1283,8 +1312,10 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ===== FOOTER ===== -->
-  <footer>
+  <footer aria-label="Footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
@@ -1322,7 +1353,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; {{footer.year}} Kaunas Plastic Surgery Meeting. All rights reserved. &nbsp;|&nbsp; <a href="/privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Privacy Policy</a> &nbsp;|&nbsp; <a href="/cookies.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Policy</a> &nbsp;|&nbsp; <a href="#" id="cookie-settings-link" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Settings</a></p>
+        <p>&copy; {{footer.year}} Kaunas Plastic Surgery Meeting. All rights reserved. &nbsp;|&nbsp; <a href="/privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Privacy Policy</a> &nbsp;|&nbsp; <a href="/cookies.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Policy</a> &nbsp;|&nbsp; <a href="/terms.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Terms</a> &nbsp;|&nbsp; <a href="#" id="cookie-settings-link" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Settings</a></p>
         <div class="footer-badges">
           <span class="footer-badge">CME Accredited</span>
           <span class="footer-badge">EACCME</span>
