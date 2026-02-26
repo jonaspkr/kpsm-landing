@@ -821,12 +821,213 @@
       border: 1px solid rgba(255,255,255,0.1);
     }
 
+    /* ============ CONTACT ============ */
+    .contact {
+      padding: 120px 0;
+      background: var(--white);
+    }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-text .section-label { margin-bottom: 12px; }
+    .contact-text h2 {
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .contact-text p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .contact-info-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,62,7,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-info-icon svg { width: 18px; height: 18px; color: var(--orange); }
+    .contact-info-text {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    .contact-info-text a {
+      color: var(--black);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .contact-info-text a:hover { color: var(--orange); }
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+    }
+    .form-group input,
+    .form-group textarea {
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: 300;
+      padding: 14px 16px;
+      border: 1px solid var(--gray-200);
+      background: var(--gray-50);
+      color: var(--black);
+      transition: border-color 0.3s;
+      outline: none;
+      resize: vertical;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+    }
+    .form-group input.error,
+    .form-group textarea.error {
+      border-color: #e53e3e;
+    }
+    .form-error {
+      font-size: 0.72rem;
+      color: #e53e3e;
+      display: none;
+    }
+    .form-error.show { display: block; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .form-consent input[type="checkbox"] {
+      margin-top: 3px;
+      width: 16px;
+      height: 16px;
+      accent-color: var(--orange);
+      flex-shrink: 0;
+    }
+    .form-consent label {
+      font-size: 0.8rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.5;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .form-consent a { color: var(--orange); }
+    .hp-field { position: absolute; left: -9999px; }
+    .form-success {
+      padding: 20px;
+      background: rgba(255,62,7,0.08);
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: none;
+    }
+    .form-success.show { display: block; }
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--orange);
+      color: var(--white);
+      padding: 16px 36px;
+      font-family: var(--font);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+    .btn-submit:hover { background: var(--orange-light); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    /* ============ COOKIE BANNER ============ */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      background: var(--black);
+      color: var(--white);
+      padding: 24px 0;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .cookie-banner.show { transform: translateY(0); }
+    .cookie-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 80px);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .cookie-text {
+      flex: 1;
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+    .cookie-text a { color: var(--lavender); text-decoration: underline; }
+    .cookie-actions {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .cookie-btn {
+      font-family: var(--font);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .cookie-accept {
+      background: var(--orange);
+      color: var(--white);
+    }
+    .cookie-accept:hover { background: var(--orange-light); }
+    .cookie-reject {
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .cookie-reject:hover { color: var(--white); border-color: rgba(255,255,255,0.5); }
+
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1000px) {
       .speakers-grid { grid-template-columns: repeat(2, 1fr); }
       .tracks-grid { grid-template-columns: 1fr; gap: 0; }
       .venue-inner { grid-template-columns: 1fr; gap: 48px; }
       .venue-visual { height: 320px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -843,6 +1044,9 @@
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
       .venue-details { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .cookie-inner { flex-direction: column; text-align: center; }
+      .cookie-actions { width: 100%; justify-content: center; }
     }
     @media (max-width: 500px) {
       .footer-grid { grid-template-columns: 1fr; }
@@ -863,6 +1067,7 @@
         <li><a href="#speakers">Speakers</a></li>
         <li><a href="#programme">Programme</a></li>
         <li><a href="#venue">Venue</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li><a href="#register" class="nav-register">Register</a></li>
       </ul>
     </div>
@@ -997,6 +1202,68 @@
     </div>
   </section>
 
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-text reveal">
+          <p class="section-label">Get in Touch</p>
+          <h2>Questions about<br>the meeting?</h2>
+          <p>Whether you need information about registration, abstract submission, sponsorship, or travel — our team is here to help.</p>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-info-text"><a href="mailto:{{footer.email}}">{{footer.email}}</a></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-info-text">{{venue.venue_name}}, Kaunas, Lithuania</div>
+          </div>
+        </div>
+        <form class="contact-form reveal delay-2" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Full name</label>
+              <input type="text" id="cf-name" name="name" required>
+              <span class="form-error" id="err-name">Please enter your name</span>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required>
+              <span class="form-error" id="err-email">Please enter a valid email</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject">
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+            <span class="form-error" id="err-message">Please enter a message</span>
+          </div>
+          <!-- Honeypot -->
+          <div class="hp-field" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-consent">
+            <input type="checkbox" id="cf-consent" name="consent" required>
+            <label for="cf-consent">I agree to the processing of my personal data as described in the <a href="/privacy.html">Privacy Policy</a>.</label>
+          </div>
+          <span class="form-error" id="err-consent">You must agree to the privacy policy</span>
+          <button type="submit" class="btn-submit" id="cf-submit">
+            Send message
+            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <div class="form-success" id="cf-success">Thank you! Your message has been sent. We'll get back to you shortly.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== CTA ===== -->
   <section class="cta-section" id="register">
     <div class="container">
@@ -1049,13 +1316,13 @@
           <ul>
             <li><a href="mailto:{{footer.email}}">{{footer.email}}</a></li>
             <li><a href="#">Sponsorship</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Past Meetings</a></li>
+            <li><a href="#contact">Contact Form</a></li>
+            <li><a href="#">Sponsorship</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; {{footer.year}} Kaunas Plastic Surgery Meeting. All rights reserved.</p>
+        <p>&copy; {{footer.year}} Kaunas Plastic Surgery Meeting. All rights reserved. &nbsp;|&nbsp; <a href="/privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Privacy Policy</a> &nbsp;|&nbsp; <a href="/cookies.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Policy</a> &nbsp;|&nbsp; <a href="#" id="cookie-settings-link" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Settings</a></p>
         <div class="footer-badges">
           <span class="footer-badge">CME Accredited</span>
           <span class="footer-badge">EACCME</span>
@@ -1064,7 +1331,21 @@
     </div>
   </footer>
 
+  <!-- ===== COOKIE BANNER ===== -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-inner">
+      <div class="cookie-text">
+        We use essential cookies to make this site work. We'd also like to use analytics cookies to improve your experience. Read our <a href="/cookies.html">Cookie Policy</a> for details.
+      </div>
+      <div class="cookie-actions">
+        <button class="cookie-btn cookie-reject" id="cookieReject">Reject all</button>
+        <button class="cookie-btn cookie-accept" id="cookieAccept">Accept all</button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    /* ===== Scroll reveals ===== */
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1073,9 +1354,9 @@
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+    /* ===== Sticky nav ===== */
     const nav = document.getElementById('nav');
     let ticking = false;
     window.addEventListener('scroll', () => {
@@ -1087,6 +1368,85 @@
         ticking = true;
       }
     });
+
+    /* ===== Cookie consent ===== */
+    (function() {
+      const banner = document.getElementById('cookieBanner');
+      const consent = localStorage.getItem('cookie_consent');
+      if (!consent) {
+        setTimeout(() => banner.classList.add('show'), 1000);
+      }
+      document.getElementById('cookieAccept').addEventListener('click', () => {
+        localStorage.setItem('cookie_consent', JSON.stringify({ essential: true, analytics: true, ts: Date.now() }));
+        banner.classList.remove('show');
+      });
+      document.getElementById('cookieReject').addEventListener('click', () => {
+        localStorage.setItem('cookie_consent', JSON.stringify({ essential: true, analytics: false, ts: Date.now() }));
+        banner.classList.remove('show');
+      });
+      document.getElementById('cookie-settings-link').addEventListener('click', (e) => {
+        e.preventDefault();
+        banner.classList.add('show');
+      });
+    })();
+
+    /* ===== Contact form ===== */
+    (function() {
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('cf-success');
+      const submitBtn = document.getElementById('cf-submit');
+
+      function showError(id, show) {
+        const el = document.getElementById(id);
+        el.classList.toggle('show', show);
+        if (show) el.previousElementSibling && el.previousElementSibling.classList.add('error');
+      }
+      function clearErrors() {
+        form.querySelectorAll('.form-error').forEach(e => e.classList.remove('show'));
+        form.querySelectorAll('.error').forEach(e => e.classList.remove('error'));
+      }
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearErrors();
+
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const message = form.message.value.trim();
+        const consent = form.consent.checked;
+        const honeypot = form.website.value;
+
+        if (honeypot) return; // bot detected
+
+        let valid = true;
+        if (!name) { showError('err-name', true); valid = false; }
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('err-email', true); valid = false; }
+        if (!message) { showError('err-message', true); valid = false; }
+        if (!consent) { showError('err-consent', true); valid = false; }
+        if (!valid) return;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+          const resp = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, subject: form.subject.value.trim(), message }),
+          });
+          if (resp.ok) {
+            form.style.display = 'none';
+            success.classList.add('show');
+          } else {
+            alert('Something went wrong. Please try emailing us directly.');
+          }
+        } catch {
+          alert('Something went wrong. Please try emailing us directly.');
+        }
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message';
+      });
+    })();
   </script>
 </body>
 </html>

@@ -103,6 +103,36 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  // Contact form API
+  if (url.pathname === '/api/contact' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    req.on('end', () => {
+      try {
+        const data = JSON.parse(body);
+        const { name, email, subject, message } = data;
+        if (!name || !email || !message) {
+          res.writeHead(400, { 'Content-Type': 'application/json', ...SECURITY_HEADERS });
+          return res.end(JSON.stringify({ error: 'Missing required fields' }));
+        }
+        // Log to stdout (visible in `flyctl logs`)
+        console.log('--- CONTACT FORM ---');
+        console.log(`Name: ${name}`);
+        console.log(`Email: ${email}`);
+        console.log(`Subject: ${subject || '(none)'}`);
+        console.log(`Message: ${message}`);
+        console.log(`Time: ${new Date().toISOString()}`);
+        console.log('--------------------');
+        res.writeHead(200, { 'Content-Type': 'application/json', ...SECURITY_HEADERS });
+        res.end(JSON.stringify({ ok: true }));
+      } catch {
+        res.writeHead(400, { 'Content-Type': 'application/json', ...SECURITY_HEADERS });
+        res.end(JSON.stringify({ error: 'Invalid JSON' }));
+      }
+    });
+    return;
+  }
+
   // Static files
   let filePath = path.join(STATIC, url.pathname === '/' ? 'index.html' : url.pathname);
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {

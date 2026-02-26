@@ -112,6 +112,12 @@ if (fs.existsSync(adminSrc)) {
   });
 }
 
+// Copy extra pages (privacy, cookies)
+['privacy.html', 'cookies.html'].forEach(f => {
+  const src = path.join(__dirname, 'src', f);
+  if (fs.existsSync(src)) fs.copyFileSync(src, path.join(distDir, f));
+});
+
 // Generate sitemap.xml
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
