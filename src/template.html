@@ -14,11 +14,13 @@
   <meta property="og:url" content="https://kpsm-landing.fly.dev/">
   <meta property="og:site_name" content="Kaunas Plastic Surgery Meeting">
   <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://kpsm-landing.fly.dev/images/kaunas-aerial.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="KPSM {{footer.year}} — Kaunas Plastic Surgery Meeting">
   <meta name="twitter:description" content="{{hero.subtitle}}">
+  <meta name="twitter:image" content="https://kpsm-landing.fly.dev/images/kaunas-aerial.jpg">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -64,6 +66,7 @@
 
     :root {
       --orange: #ff3e07;
+      --orange-text: #c43200;
       --orange-light: #ff6438;
       --lavender: #c8c7ff;
       --lavender-light: #e4e3ff;
@@ -234,7 +237,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--orange-text);
       margin-bottom: 20px;
     }
     .hero-badge::before {
@@ -379,7 +382,7 @@
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--orange-text);
       margin-bottom: 12px;
     }
     .section-title {
@@ -393,7 +396,7 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--orange-text);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -461,7 +464,7 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--orange-text);
       padding: 5px 12px;
       background: rgba(255,62,7,0.08);
     }
@@ -957,7 +960,7 @@
       text-transform: none;
       letter-spacing: 0;
     }
-    .form-consent a { color: var(--orange); }
+    .form-consent a { color: var(--orange-text); }
     .hp-field { position: absolute; left: -9999px; }
     .form-success {
       padding: 20px;
@@ -1088,7 +1091,7 @@
   <!-- ===== NAV ===== -->
   <nav id="nav" aria-label="Main navigation">
     <div class="container">
-      <a href="#" class="nav-logo">
+      <a href="/" class="nav-logo">
         <img src="images/KPSM logo mazas juodas.png" alt="KPSM">
       </a>
       <ul class="nav-links">
@@ -1126,11 +1129,11 @@
         <div class="hero-actions reveal delay-4">
           <a href="#register" class="btn-primary">
             Register now
-            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
           <a href="#programme" class="btn-outline">
             View programme
-            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
         <div class="hero-stats reveal delay-5">
@@ -1159,9 +1162,9 @@
           <p class="section-label">Keynote Faculty</p>
           <h2 class="section-title">World-class speakers</h2>
         </div>
-        <a href="#" class="section-link">
+        <a href="#speakers" class="section-link">
           All speakers
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
       <div class="speakers-grid">
@@ -1241,13 +1244,13 @@
           <p>Whether you need information about registration, abstract submission, sponsorship, or travel — our team is here to help.</p>
           <div class="contact-info-item">
             <div class="contact-info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
             </div>
             <div class="contact-info-text"><a href="mailto:{{footer.email}}">{{footer.email}}</a></div>
           </div>
           <div class="contact-info-item">
             <div class="contact-info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div class="contact-info-text">{{venue.venue_name}}, Kaunas, Lithuania</div>
           </div>
@@ -1327,33 +1330,33 @@
         <div class="footer-col">
           <h4>Meeting</h4>
           <ul>
-            <li><a href="#">Programme</a></li>
-            <li><a href="#">Faculty</a></li>
-            <li><a href="#">Masterclasses</a></li>
-            <li><a href="#">Exhibition</a></li>
+            <li><a href="#programme">Programme</a></li>
+            <li><a href="#speakers">Faculty</a></li>
+            <li><a href="#programme">Tracks</a></li>
+            <li><a href="#venue">Venue</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Attend</h4>
           <ul>
-            <li><a href="#">Registration</a></li>
-            <li><a href="#">Travel & Hotels</a></li>
-            <li><a href="#">Visa Information</a></li>
-            <li><a href="#">CME Credits</a></li>
+            <li><a href="#register">Registration</a></li>
+            <li><a href="#venue">Travel & Venue</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="/terms.html">Terms</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Connect</h4>
           <ul>
             <li><a href="mailto:{{footer.email}}">{{footer.email}}</a></li>
-            <li><a href="#">Sponsorship</a></li>
             <li><a href="#contact">Contact Form</a></li>
-            <li><a href="#">Sponsorship</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/cookies.html">Cookie Policy</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; {{footer.year}} Kaunas Plastic Surgery Meeting. All rights reserved. &nbsp;|&nbsp; <a href="/privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Privacy Policy</a> &nbsp;|&nbsp; <a href="/cookies.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Policy</a> &nbsp;|&nbsp; <a href="/terms.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Terms</a> &nbsp;|&nbsp; <a href="#" id="cookie-settings-link" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Settings</a></p>
+        <p>&copy; {{footer.year}} Kaunas Plastic Surgery Meeting. All rights reserved. &nbsp;|&nbsp; <a href="/privacy.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Privacy Policy</a> &nbsp;|&nbsp; <a href="/cookies.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Policy</a> &nbsp;|&nbsp; <a href="/terms.html" style="color:rgba(255,255,255,0.4);text-decoration:none">Terms</a> &nbsp;|&nbsp; <a href="/cookies.html" id="cookie-settings-link" style="color:rgba(255,255,255,0.4);text-decoration:none">Cookie Settings</a></p>
         <div class="footer-badges">
           <span class="footer-badge">CME Accredited</span>
           <span class="footer-badge">EACCME</span>
