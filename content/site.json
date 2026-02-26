@@ -15,18 +15,18 @@
   "speakers": [
     {
       "name": "Dr. Romeu Fadul Jr.",
-      "title": "Plastic Surgeon, Brazil",
+      "title": "Licensed Plastic Surgeon, São Paulo, Brazil",
       "tag": "Guest Speaker",
       "photo": "images/speaker-romeu-fadul.jpg"
     },
     {
-      "name": "Andrius Pajeda",
+      "name": "Andrius Pajėda",
       "title": "Plastic & Reconstructive Surgeon, Lithuania",
       "tag": "Faculty",
       "photo": "images/speaker-andrius-pajeda.jpg"
     },
     {
-      "name": "Ghassan",
+      "name": "Ghassan W. Said",
       "title": "Plastic & Aesthetic Surgeon",
       "tag": "Faculty",
       "photo": "images/speaker-ghassan.jpg"
@@ -38,44 +38,64 @@
       "photo": "images/speaker-tautvydas-urbonas.jpg"
     }
   ],
-  "tracks": [
+  "sessions": [
     {
       "num": "01",
-      "name": "Facial Aesthetics",
-      "description": "Rhinoplasty advances, non-surgical rejuvenation, fat grafting, and facial harmony — from consultation to long-term outcomes.",
-      "sessions": "42 Sessions"
+      "name": "Breast Surgery",
+      "description": "Four expert presentations exploring contemporary approaches to breast augmentation, reduction, reconstruction, and revision surgery, followed by an interactive discussion focused on clinical decision-making and outcomes.",
+      "count": "4 Presentations + Discussion",
+      "day": "Friday"
     },
     {
       "num": "02",
-      "name": "Breast Surgery",
-      "description": "Oncoplastic innovation, implant evolution, autologous reconstruction, and patient-centered decision frameworks.",
-      "sessions": "34 Sessions"
+      "name": "Body Contouring",
+      "description": "A session dedicated to modern body contouring techniques, including abdominoplasty, liposuction, and combination procedures, concluding with a case-based discussion.",
+      "count": "4 Presentations + Discussion",
+      "day": "Friday"
     },
     {
       "num": "03",
-      "name": "Body Contouring",
-      "description": "High-definition liposculpture, post-bariatric reconstruction, and the integration of energy-based devices in body aesthetics.",
-      "sessions": "38 Sessions"
+      "name": "Facial Surgery",
+      "description": "Four presentations covering key aspects of facial aesthetic surgery, from surgical planning to refined technique, followed by open discussion and exchange of experience.",
+      "count": "4 Presentations + Discussion",
+      "day": "Friday"
     },
     {
       "num": "04",
-      "name": "Digital Surgery",
-      "description": "AI-assisted surgical planning, 3D simulation, robotic technique, and the digital transformation of aesthetic practice.",
-      "sessions": "28 Sessions"
+      "name": "Clinical Philosophy",
+      "description": "A reflective session on surgical thinking, patient selection, ethics, and long-term vision in plastic surgery practice, ending with a moderated discussion.",
+      "count": "4 Presentations + Discussion",
+      "day": "Saturday"
     },
     {
       "num": "05",
-      "name": "Regenerative Medicine",
-      "description": "Stem cell therapy, tissue engineering, PRP protocols, and the frontier of biological reconstruction in clinical practice.",
-      "sessions": "36 Sessions"
-    },
-    {
-      "num": "06",
-      "name": "Ethics & Safety",
-      "description": "Patient consent, complication management, social media responsibility, and the evolving ethical landscape of cosmetic surgery.",
-      "sessions": "22 Sessions"
+      "name": "Surgical Drawing & Marking",
+      "description": "Practical presentations focused on preoperative marking and surgical planning principles for breast, abdomen, liposuction, and face procedures, followed by discussion and clinical insights.",
+      "count": "4 Presentations + Discussion",
+      "day": "Saturday"
     }
   ],
+  "schedule": {
+    "friday": {
+      "label": "Friday, 19th June",
+      "blocks": [
+        { "time": "9:00 – 11:00", "title": "Breast Surgery Session", "type": "session", "detail": "4 presentations + Discussion, Q&A" },
+        { "time": "11:00 – 11:40", "title": "Coffee Break", "type": "break" },
+        { "time": "11:40 – 13:40", "title": "Body Contouring Session", "type": "session", "detail": "4 presentations + Discussion, Q&A" },
+        { "time": "13:40 – 14:40", "title": "Lunch", "type": "break" },
+        { "time": "14:40 – 16:40", "title": "Facial Surgery Session", "type": "session", "detail": "4 presentations + Discussion, Q&A" },
+        { "time": "19:00", "title": "Gala Dinner", "type": "social" }
+      ]
+    },
+    "saturday": {
+      "label": "Saturday, 20th June",
+      "blocks": [
+        { "time": "10:00 – 12:00", "title": "Clinical Philosophy Session", "type": "session", "detail": "4 presentations + Q&A, Discussion" },
+        { "time": "12:00 – 12:40", "title": "Coffee Break", "type": "break" },
+        { "time": "12:40 – 14:20", "title": "Surgical Drawing & Marking Session", "type": "session", "detail": "Breast, Abdomen, Liposuction, Face + Discussion" }
+      ]
+    }
+  },
   "testimonials": [
     {
       "quote": "KPSM is where the real conversations happen. The masterclasses alone justified the trip — but the hallway discussions between sessions were equally transformative for my practice.",
@@ -84,7 +104,7 @@
       "initial": "S"
     },
     {
-      "quote": "The digital surgery track opened my eyes to possibilities I had not considered. I returned home and completely restructured my pre-operative workflow using the 3D planning tools presented.",
+      "quote": "The clinical philosophy session opened my eyes to possibilities I had not considered. I returned home and completely restructured my pre-operative workflow.",
       "name": "Dr. Raj Patel",
       "role": "Reconstructive Surgeon, London",
       "initial": "R"
@@ -98,18 +118,19 @@
   ],
   "venue": {
     "title": "Kaunas, Lithuania",
-    "description": "Lithuania's second city and a European Capital of Culture. A vibrant centre of modernist architecture, medical innovation, and warm Baltic hospitality.",
-    "venue_name": "Žalgirio Arena",
+    "description": "The conference will take place at Drobės Fabrikas in Kaunas — a unique industrial venue that blends historic character with modern functionality. Its contemporary spaces provide an inspiring setting for professional exchange, learning, and networking in a distinctive architectural environment.",
+    "venue_name": "Drobės Fabrikas",
+    "venue_address": "Drobės g. 62, Kaunas",
     "airport": "KUN — 20 min transfer",
     "transport": "Direct flights from major EU hubs",
     "hotels": "Partner rates available"
   },
   "cta": {
     "heading": "Join us in Kaunas",
-    "description": "Early registration is now open. Includes full meeting access, digital proceedings, welcome reception, and gala dinner.",
-    "price": "€690",
-    "price_note": "Early bird — Full meeting pass",
-    "button_text": "Register now",
+    "description": "Early bird registration is open until 30 April. Includes full meeting access, proceedings, welcome reception, and gala dinner.",
+    "price": "€250",
+    "price_note": "Early bird · Regular price €300",
+    "button_text": "Buy tickets",
     "button_link": "#"
   },
   "footer": {

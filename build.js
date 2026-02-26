@@ -21,17 +21,45 @@ const speakersHtml = content.speakers.map((s, i) => {
         </div>`;
 }).join('\n');
 
-// Generate track cards HTML
-const tracksHtml = content.tracks.map((t, i) => {
+// Generate session cards HTML
+const sessionsHtml = content.sessions.map((t, i) => {
   const delay = (i % 3) + 1;
   return `
-        <div class="track-card reveal delay-${delay}">
-          <div class="track-num">${t.num}</div>
+        <div class="session-card reveal delay-${delay}">
+          <div class="session-num">${t.num}</div>
           <h3>${t.name}</h3>
           <p>${t.description}</p>
-          <div class="track-count">${t.sessions}</div>
+          <div class="session-meta">
+            <span class="session-count">${t.count}</span>
+            <span class="session-day">${t.day}</span>
+          </div>
         </div>`;
 }).join('\n');
+
+// Generate schedule HTML
+function buildSchedule(day) {
+  return day.blocks.map(b => {
+    const cls = b.type === 'break' ? 'schedule-break' : b.type === 'social' ? 'schedule-social' : 'schedule-session';
+    const detail = b.detail ? `<span class="schedule-detail">${b.detail}</span>` : '';
+    return `
+            <div class="schedule-row ${cls}">
+              <div class="schedule-time">${b.time}</div>
+              <div class="schedule-info">
+                <div class="schedule-title">${b.title}</div>
+                ${detail}
+              </div>
+            </div>`;
+  }).join('\n');
+}
+const scheduleHtml = `
+        <div class="schedule-day">
+          <h3 class="schedule-day-label">${content.schedule.friday.label}</h3>
+${buildSchedule(content.schedule.friday)}
+        </div>
+        <div class="schedule-day">
+          <h3 class="schedule-day-label">${content.schedule.saturday.label}</h3>
+${buildSchedule(content.schedule.saturday)}
+        </div>`;
 
 // Generate testimonial cards HTML
 const testimonialsHtml = content.testimonials.map((t, i) => {
@@ -66,14 +94,16 @@ let html = template
   .replace('{{hero.stat_attendees}}', content.hero.stat_attendees)
   // Speakers
   .replace('{{speakers}}', speakersHtml)
-  // Tracks
-  .replace('{{tracks}}', tracksHtml)
+  // Sessions
+  .replace('{{sessions}}', sessionsHtml)
+  .replace('{{schedule}}', scheduleHtml)
   // Testimonials
   .replace('{{testimonials}}', testimonialsHtml)
   // Venue
   .replace('{{venue.title}}', content.venue.title)
   .replace('{{venue.description}}', content.venue.description)
   .replace(/\{\{venue\.venue_name\}\}/g, content.venue.venue_name)
+  .replace('{{venue.venue_address}}', content.venue.venue_address)
   .replace('{{venue.airport}}', content.venue.airport)
   .replace('{{venue.transport}}', content.venue.transport)
   .replace('{{venue.hotels}}', content.venue.hotels)

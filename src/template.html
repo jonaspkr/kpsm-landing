@@ -469,16 +469,15 @@
       background: rgba(255,62,7,0.08);
     }
 
-    /* ============ TRACKS ============ */
-    .tracks {
+    /* ============ SESSIONS ============ */
+    .sessions {
       padding: 120px 0;
       background: var(--black);
       color: var(--white);
       position: relative;
       overflow: hidden;
     }
-    /* Large decorative KPSM text */
-    .tracks-bg-text {
+    .sessions-bg-text {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -490,14 +489,14 @@
       pointer-events: none;
       white-space: nowrap;
     }
-    .tracks-header {
+    .sessions-header {
       text-align: center;
       margin-bottom: 72px;
       position: relative;
       z-index: 1;
     }
-    .tracks .section-label { color: var(--lavender); }
-    .tracks-grid {
+    .sessions .section-label { color: var(--lavender); }
+    .sessions-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
@@ -505,13 +504,13 @@
       position: relative;
       z-index: 1;
     }
-    .track-card {
+    .session-card {
       padding: 48px 36px;
       background: var(--black);
       position: relative;
       transition: all 0.4s ease;
     }
-    .track-card::before {
+    .session-card::before {
       content: '';
       position: absolute;
       bottom: 0; left: 0;
@@ -522,9 +521,9 @@
       transform-origin: left;
       transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .track-card:hover::before { transform: scaleX(1); }
-    .track-card:hover { background: rgba(255,255,255,0.04); }
-    .track-num {
+    .session-card:hover::before { transform: scaleX(1); }
+    .session-card:hover { background: rgba(255,255,255,0.04); }
+    .session-num {
       font-size: 3rem;
       font-weight: 700;
       color: rgba(200,199,255,0.15);
@@ -532,25 +531,97 @@
       margin-bottom: 20px;
       transition: color 0.4s;
     }
-    .track-card:hover .track-num { color: var(--orange); }
-    .track-card h3 {
+    .session-card:hover .session-num { color: var(--orange); }
+    .session-card h3 {
       font-size: 1.2rem;
       font-weight: 700;
       margin-bottom: 12px;
     }
-    .track-card p {
+    .session-card p {
       font-size: 0.85rem;
       font-weight: 300;
       color: rgba(255,255,255,0.5);
       line-height: 1.75;
     }
-    .track-count {
+    .session-meta {
       margin-top: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .session-count {
       font-size: 0.65rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--lavender-dim);
+    }
+    .session-day {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      padding: 3px 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    /* ============ SCHEDULE ============ */
+    .schedule {
+      padding: 100px 0;
+      background: var(--gray-50);
+    }
+    .schedule-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .schedule-days {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+    .schedule-day-label {
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding-bottom: 16px;
+      margin-bottom: 0;
+      border-bottom: 3px solid var(--orange);
+    }
+    .schedule-row {
+      display: flex;
+      gap: 20px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--gray-200);
+      align-items: flex-start;
+    }
+    .schedule-time {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--black);
+      white-space: nowrap;
+      min-width: 100px;
+      padding-top: 2px;
+    }
+    .schedule-title {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .schedule-detail {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      margin-top: 2px;
+    }
+    .schedule-break .schedule-time,
+    .schedule-break .schedule-title {
+      color: var(--gray-400);
+      font-weight: 400;
+    }
+    .schedule-social .schedule-title {
+      color: var(--orange);
+      font-weight: 700;
     }
 
     /* ============ TESTIMONIALS ============ */
@@ -1054,7 +1125,8 @@
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1000px) {
       .speakers-grid { grid-template-columns: repeat(2, 1fr); }
-      .tracks-grid { grid-template-columns: 1fr; gap: 0; }
+      .sessions-grid { grid-template-columns: 1fr; gap: 0; }
+      .schedule-days { grid-template-columns: 1fr; }
       .venue-inner { grid-template-columns: 1fr; gap: 48px; }
       .venue-visual { height: 320px; }
       .contact-inner { grid-template-columns: 1fr; gap: 48px; }
@@ -1173,16 +1245,29 @@
     </div>
   </section>
 
-  <!-- ===== TRACKS ===== -->
-  <section class="tracks" id="programme" aria-label="Programme">
-    <div class="tracks-bg-text">KPSM</div>
+  <!-- ===== SESSIONS ===== -->
+  <section class="sessions" id="programme" aria-label="Programme">
+    <div class="sessions-bg-text">KPSM</div>
     <div class="container">
-      <div class="tracks-header reveal">
+      <div class="sessions-header reveal">
         <p class="section-label">Scientific Programme</p>
-        <h2 class="section-title">Six specialised tracks</h2>
+        <h2 class="section-title">Five conference sessions</h2>
       </div>
-      <div class="tracks-grid">
-{{tracks}}
+      <div class="sessions-grid">
+{{sessions}}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCHEDULE ===== -->
+  <section class="schedule" id="schedule" aria-label="Schedule">
+    <div class="container">
+      <div class="schedule-header reveal">
+        <p class="section-label">Programme Timetable</p>
+        <h2 class="section-title">Two days of focused sessions</h2>
+      </div>
+      <div class="schedule-days reveal delay-1">
+{{schedule}}
       </div>
     </div>
   </section>
@@ -1214,7 +1299,7 @@
           <div class="venue-details">
             <div class="venue-detail">
               <div class="venue-detail-label">Venue</div>
-              <div class="venue-detail-value">{{venue.venue_name}}</div>
+              <div class="venue-detail-value">{{venue.venue_name}}<br>{{venue.venue_address}}</div>
             </div>
             <div class="venue-detail">
               <div class="venue-detail-label">Airport</div>

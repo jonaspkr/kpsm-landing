@@ -44,15 +44,16 @@ collections:
               - { name: tag, label: Tag (e.g. Keynote), widget: string }
               - { name: photo, label: Photo, widget: image, required: false }
 
-          # ── Tracks ──
-          - name: tracks
-            label: Programme Tracks
+          # ── Sessions ──
+          - name: sessions
+            label: Conference Sessions
             widget: list
             fields:
-              - { name: num, label: "Track Number (01, 02…)", widget: string }
-              - { name: name, label: Track Name, widget: string }
+              - { name: num, label: "Session Number (01, 02…)", widget: string }
+              - { name: name, label: Session Name, widget: string }
               - { name: description, label: Description, widget: text }
-              - { name: sessions, label: "Sessions (e.g. 42 Sessions)", widget: string }
+              - { name: count, label: "Format (e.g. 4 Presentations + Discussion)", widget: string }
+              - { name: day, label: "Day (Friday or Saturday)", widget: string }
 
           # ── Testimonials ──
           - name: testimonials
@@ -72,6 +73,7 @@ collections:
               - { name: title, label: Venue Title, widget: string }
               - { name: description, label: Description, widget: text }
               - { name: venue_name, label: Venue Name, widget: string }
+              - { name: venue_address, label: Venue Address, widget: string }
               - { name: airport, label: Airport Info, widget: string }
               - { name: transport, label: Transport Info, widget: string }
               - { name: hotels, label: Hotels Info, widget: string }
