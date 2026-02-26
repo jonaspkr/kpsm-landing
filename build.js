@@ -57,7 +57,7 @@ let html = template
   .replace('{{hero.title_line1}}', content.hero.title_line1)
   .replace('{{hero.title_line2}}', content.hero.title_line2)
   .replace('{{hero.title_accent}}', content.hero.title_accent)
-  .replace('{{hero.subtitle}}', content.hero.subtitle)
+  .replace(/\{\{hero\.subtitle\}\}/g, content.hero.subtitle)
   .replace('{{hero.location}}', content.hero.location)
   .replace('{{hero.duration}}', content.hero.duration)
   .replace('{{hero.credits}}', content.hero.credits)
@@ -73,7 +73,7 @@ let html = template
   // Venue
   .replace('{{venue.title}}', content.venue.title)
   .replace('{{venue.description}}', content.venue.description)
-  .replace('{{venue.venue_name}}', content.venue.venue_name)
+  .replace(/\{\{venue\.venue_name\}\}/g, content.venue.venue_name)
   .replace('{{venue.airport}}', content.venue.airport)
   .replace('{{venue.transport}}', content.venue.transport)
   .replace('{{venue.hotels}}', content.venue.hotels)
@@ -111,5 +111,25 @@ if (fs.existsSync(adminSrc)) {
     fs.copyFileSync(path.join(adminSrc, f), path.join(adminDest, f));
   });
 }
+
+// Generate sitemap.xml
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kpsm-landing.fly.dev/</loc>
+    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+    <priority>1.0</priority>
+  </url>
+</urlset>`;
+fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap);
+
+// Generate robots.txt
+const robots = `User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /oauth/
+
+Sitemap: https://kpsm-landing.fly.dev/sitemap.xml`;
+fs.writeFileSync(path.join(distDir, 'robots.txt'), robots);
 
 console.log('Build complete → dist/');

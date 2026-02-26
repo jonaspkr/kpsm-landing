@@ -4,6 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KPSM {{footer.year}} — Kaunas Plastic Surgery Meeting</title>
+  <meta name="description" content="{{hero.subtitle}}">
+  <link rel="canonical" href="https://kpsm-landing.fly.dev/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KPSM {{footer.year}} — Kaunas Plastic Surgery Meeting">
+  <meta property="og:description" content="{{hero.subtitle}}">
+  <meta property="og:url" content="https://kpsm-landing.fly.dev/">
+  <meta property="og:site_name" content="Kaunas Plastic Surgery Meeting">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="KPSM {{footer.year}} — Kaunas Plastic Surgery Meeting">
+  <meta name="twitter:description" content="{{hero.subtitle}}">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Kaunas Plastic Surgery Meeting {{footer.year}}",
+    "description": "{{hero.subtitle}}",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "{{venue.venue_name}}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kaunas",
+        "addressCountry": "LT"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "Kaunas Plastic Surgery Meeting",
+      "url": "https://kpsm-landing.fly.dev"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "690",
+      "priceCurrency": "EUR",
+      "url": "https://kpsm-landing.fly.dev/#register",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">

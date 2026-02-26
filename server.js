@@ -12,7 +12,43 @@ const MIME = {
   '.html': 'text/html', '.css': 'text/css', '.js': 'application/javascript',
   '.json': 'application/json', '.png': 'image/png', '.jpg': 'image/jpeg',
   '.svg': 'image/svg+xml', '.yml': 'text/yaml', '.ico': 'image/x-icon',
+  '.xml': 'application/xml', '.txt': 'text/plain', '.webp': 'image/webp',
 };
+
+const SECURITY_HEADERS = {
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+  'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.github.com https://github.com;",
+  'Strict-Transport-Security': 'max-age=63072000; includeSubDomains',
+};
+
+const PAGE_404 = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — KPSM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Montserrat',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fff;color:#000}
+    .wrap{text-align:center;padding:40px}
+    .code{font-size:8rem;font-weight:700;line-height:1;color:#ff3e07}
+    .msg{font-size:1.1rem;font-weight:300;color:#555;margin:16px 0 40px}
+    a{display:inline-block;padding:14px 36px;background:#ff3e07;color:#fff;text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:background .3s}
+    a:hover{background:#ff6438}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="code">404</div>
+    <p class="msg">This page doesn't exist. Let's get you back to the meeting.</p>
+    <a href="/">Back to homepage</a>
+  </div>
+</body>
+</html>`;
 
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
@@ -41,7 +77,7 @@ const server = http.createServer(async (req, res) => {
       const data = await resp.json();
 
       if (data.error) {
-        res.writeHead(400, { 'Content-Type': 'text/html' });
+        res.writeHead(400, { 'Content-Type': 'text/html', ...SECURITY_HEADERS });
         return res.end(`<p>Error: ${data.error_description}</p>`);
       }
 
@@ -76,11 +112,18 @@ const server = http.createServer(async (req, res) => {
   try {
     const data = fs.readFileSync(filePath);
     const ext = path.extname(filePath);
-    res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
+    const headers = { 'Content-Type': MIME[ext] || 'application/octet-stream', ...SECURITY_HEADERS };
+    // Cache static assets for 1 year (images, fonts)
+    if (['.png', '.jpg', '.webp', '.svg', '.ico'].includes(ext)) {
+      headers['Cache-Control'] = 'public, max-age=31536000, immutable';
+    } else {
+      headers['Cache-Control'] = 'public, max-age=3600';
+    }
+    res.writeHead(200, headers);
     res.end(data);
   } catch {
-    res.writeHead(404);
-    res.end('Not found');
+    res.writeHead(404, { 'Content-Type': 'text/html', ...SECURITY_HEADERS });
+    res.end(PAGE_404);
   }
 });
 
