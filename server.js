@@ -134,7 +134,8 @@ const server = http.createServer(async (req, res) => {
   }
 
   // Static files
-  let filePath = path.join(STATIC, url.pathname === '/' ? 'index.html' : url.pathname);
+  const decodedPath = decodeURIComponent(url.pathname);
+  let filePath = path.join(STATIC, decodedPath === '/' ? 'index.html' : decodedPath);
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
     filePath = path.join(filePath, 'index.html');
   }
