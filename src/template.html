@@ -512,6 +512,8 @@
       background: var(--black);
       position: relative;
       transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
     }
     .session-card::before {
       content: '';
@@ -526,6 +528,7 @@
     }
     .session-card:hover::before { transform: scaleX(1); }
     .session-card:hover { background: rgba(255,255,255,0.04); }
+    .session-card:hover p { color: rgba(255,255,255,0.85); }
     .session-num {
       font-size: 3rem;
       font-weight: 700;
@@ -543,11 +546,12 @@
     .session-card p {
       font-size: 0.85rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.7);
       line-height: 1.75;
     }
     .session-meta {
-      margin-top: 24px;
+      margin-top: auto;
+      padding-top: 24px;
       display: flex;
       gap: 16px;
       align-items: center;
