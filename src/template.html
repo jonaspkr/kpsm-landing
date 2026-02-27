@@ -446,7 +446,7 @@
         radial-gradient(ellipse at 50% 35%, rgba(200,199,255,0.4) 0%, transparent 50%),
         radial-gradient(ellipse at 50% 70%, rgba(255,62,7,0.06) 0%, transparent 40%);
     }
-    .speaker-info { padding: 24px; }
+    .speaker-info { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
     .speaker-name {
       font-size: 1.05rem;
       font-weight: 700;
@@ -458,9 +458,11 @@
       color: var(--gray-600);
       line-height: 1.5;
     }
+    .speaker-card { display: flex; flex-direction: column; }
     .speaker-tag {
       display: inline-block;
-      margin-top: 14px;
+      margin-top: auto;
+      padding-top: 14px;
       font-size: 0.6rem;
       font-weight: 700;
       letter-spacing: 0.12em;
