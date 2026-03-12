@@ -7,70 +7,174 @@
     "subtitle": "Face, breasts & body contouring. An international congress bringing together experts for scientific exchange and professional discussion.",
     "location": "Kaunas, Lithuania",
     "duration": "2 Days · 19–20 June",
-    "credits": "Gala Dinner Included",
-    "stat_speakers": "120+",
-    "stat_countries": "35",
-    "stat_attendees": "1,800"
+    "credits": "Info soon",
+    "stat_speakers": "16",
+    "stat_countries": "4",
+    "stat_attendees": "5"
   },
   "speakers": [
     {
-      "name": "Dr. Romeu Fadul Jr.",
-      "title": "Licensed Plastic Surgeon, São Paulo, Brazil",
+      "name": "Romeu Fadul",
+      "slug": "romeu-fadul",
+      "title": "Plastic & Aesthetic Surgeon, São Paulo, Brazil",
       "tag": "Guest Speaker",
-      "photo": "images/speaker-romeu-fadul.jpg"
+      "photo": "images/speaker-romeu-fadul.jpg",
+      "bio": "Dr. Romeu Fadul is a licensed Plastic Surgeon with active clinical practice in São Paulo (Brazil), Doha (Qatar), and Shenzhen (China). His international career combines advanced surgical practice, academic involvement, and leadership within the global plastic surgery community.\n\nHe holds a Master's Degree in Plastic Surgery from the Federal University of São Paulo and completed a fellowship at the Department of Plastic Surgery at West Virginia University.\n\nIn addition to his medical career, he served as former CFO of Saúde Mais Ação, a financial education company dedicated to healthcare professionals, reflecting his broader interest in professional development and organizational growth within medicine.\n\nDr. Fadul also serves as Latin America Secretary of the Association of Plastic Surgeons of Lebanese Descent, reinforcing his strong engagement in international professional networks.\n\nHis work is defined by technical precision, structured surgical planning, and a continuous commitment to education, innovation, and excellence in modern plastic and aesthetic surgery."
     },
     {
-      "name": "Andrius Pajėda",
+      "name": "Raul Chioibas, MD, PhD",
+      "slug": "raul-chioibas",
+      "title": "Plastic & Aesthetic Surgeon, Timișoara, Romania",
+      "tag": "Guest Speaker",
+      "photo": "images/speaker-raul-chioibas.jpg",
+      "bio": "Dr. Raul Daniel Chioibaș is a Primary Physician in Plastic and Aesthetic Surgery with over 20 years of clinical experience and more than 4,000 aesthetic surgical procedures performed. He is the Founder and Head of the Plastic Surgery Department at CBS Medcom Hospital in Timișoara, Romania, and Associate Professor at the \"Victor Babeș\" University of Medicine and Pharmacy.\n\nHis academic path includes a PhD focused on the dimensional and psychological evaluation of breast augmentation patients. Dr. Chioibaș completed multiple international fellowships in leading aesthetic surgery centers across Italy, Sweden, Japan, Belgium, and the United States (including training with Dr. Constantino Mendieta in Miami), shaping a refined and globally informed surgical approach.\n\nAn active member of ISAPS and the Association of Plastic Surgeons in Romania, he serves on the Board of Governors of AAMS and frequently participates as an invited speaker and instructor at major international congresses. He is also President and Scientific Program Director of the TIMBFRAS Congress.\n\nDr. Chioibaș has authored many scientific articles, contributed to national research grants in oncoplastic and reconstructive surgery, and published three books on aesthetic and interdisciplinary surgical concepts. His work integrates technical precision, academic rigor, and a strong focus on patient-centered outcomes."
+    },
+    {
+      "name": "Goda Aštrauskaitė",
+      "slug": "goda-astrauskaite",
       "title": "Plastic & Reconstructive Surgeon, Lithuania",
       "tag": "Faculty",
-      "photo": "images/speaker-andrius-pajeda.jpg"
+      "photo": "images/speaker-goda-astrauskaite.jpg",
+      "bio": "Dr. Goda Aštrauskaitė is a Plastic and Reconstructive Surgeon with clinical training in Lithuania and France. She combines evidence-based surgical practice with continuous academic involvement and active participation in the international plastic surgery community.\n\nHer early professional formation also includes internships at the Republican Hospital of Kaunas and Lille University of Health and Law (France).\n\nSince 2019, she has been practicing at Nordclinic as a plastic surgeon. Previously, she worked both in private practice and at the Hospital of the Lithuanian University of Health Sciences, Department of Plastic and Reconstructive Surgery. Alongside clinical work, she has contributed to medical education as a lecturer at the Lithuanian University of Health Sciences and Ignatius Loyola College.\n\nDr. Aštrauskaitė is an active participant and speaker at numerous national and international conferences. She has presented on topics including breast reconstruction (TRAM and DIEP flap techniques), facial fat grafting, implant selection strategies, microsurgical techniques, and reconstructive surgery innovations. She has delivered presentations at more than 15 scientific conferences in Lithuania and abroad and is the author of a published article in the Lithuanian medical journal."
     },
     {
-      "name": "Ghassan W. Said",
-      "title": "Plastic & Aesthetic Surgeon",
+      "name": "Tautrimas Aštrauskas",
+      "slug": "tautrimas-astrauskas",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
       "tag": "Faculty",
-      "photo": "images/speaker-ghassan.jpg"
+      "photo": "images/speaker-tautrimas-astrauskas.jpg",
+      "bio": "Dr. Tautrimas Aštrauskas is a plastic and reconstructive surgeon with more than 35 years of experience in the field. His professional work encompasses both aesthetic and reconstructive surgery, with long-standing clinical practice in Lithuania and international professional engagement.\n\nThroughout his career, he has focused on the development and application of advanced surgical techniques that emphasize patient safety, structural precision, and natural, long-term results. His approach is grounded in detailed preoperative planning, anatomical expertise, and individualized surgical strategies.\n\nDr. Aštrauskas continuously updates his knowledge through participation in international congresses, professional trainings, and scientific collaboration. His work reflects a commitment to high clinical standards, surgical responsibility, and the ongoing advancement of plastic and reconstructive surgery."
+    },
+    {
+      "name": "Saulius Vikšraitis",
+      "slug": "saulius-viksraitis",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-saulius-viksraitis.jpg",
+      "bio": "Dr. Saulius Vikšraitis is a plastic and reconstructive surgeon with over three decades of clinical experience, with a strong focus on reconstructive microsurgery. He began his career at Kaunas University Clinics, where he played a key role in developing plastic and reconstructive microsurgery in Lithuania.\n\nThroughout his professional practice, he has performed more than 8,000 plastic and reconstructive procedures, including complex microsurgical tissue transfers, autologous reconstructions, and advanced aesthetic surgeries. His work integrates precise microvascular techniques, structured surgical planning, and careful attention to long-term functional and aesthetic outcomes.\n\nDr. Vikšraitis has introduced innovative surgical techniques in facial rejuvenation and actively contributes to professional education as an international medical expert and lecturer.\n\nHe is a full member of the Lithuanian Society of Plastic and Reconstructive Surgery, IPRAS, ESPRAS, and ISAPS, where he serves as National Secretary and official lecturer in the facelift section."
+    },
+    {
+      "name": "Mantas Sakalauskas",
+      "slug": "mantas-sakalauskas",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-mantas-sakalauskas.jpg",
+      "bio": "Dr. Mantas Sakalauskas is a plastic and reconstructive surgeon practicing in Lithuania, with clinical experience in both aesthetic and reconstructive procedures. His professional focus includes facial and body aesthetic surgery, breast surgery, and corrective procedures requiring precise surgical planning and individualized approach.\n\nHe completed his medical education and specialist training in plastic and reconstructive surgery in Lithuania and continuously advances his expertise through international courses, congresses, and professional development programs.\n\nAlongside clinical practice, he participates in professional meetings and international collaborations, contributing to knowledge exchange within the plastic surgery community. His approach is grounded in detailed preoperative evaluation, clear communication with patients, and selection of surgical strategies tailored to functional and aesthetic goals.\n\nDr. Sakalauskas' work reflects a commitment to high clinical standards, ongoing education, and the responsible advancement of modern plastic and reconstructive surgery."
     },
     {
       "name": "Tautvydas Urbonas",
-      "title": "Plastic Surgeon, Lithuania",
+      "slug": "tautvydas-urbonas",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
       "tag": "Faculty",
-      "photo": "images/speaker-tautvydas-urbonas.jpg"
+      "photo": "images/speaker-tautvydas-urbonas.jpg",
+      "bio": "Dr. Tautvydas Urbonas is a plastic and reconstructive surgeon with more than 13 years of clinical experience and a high operative volume, performing over 300 plastic surgeries annually. His practice spans breast surgery, rhinoplasty, facial procedures, body contouring, and complex combined operations requiring detailed anatomical planning and surgical versatility.\n\nHe completed his medical studies at the Lithuanian University of Health Sciences, followed by internships in Lille University Hospital (France) and Kaunas Republican Hospital. He obtained his specialist qualification in plastic and reconstructive surgery at Vilnius University Hospital.\n\nDr. Urbonas has been actively involved in scientific activity since his early academic years, presenting research at Baltic and European surgical meetings. His conference participation includes ESPRAS and Baltic Association of Surgeons congresses, as well as focused seminars on breast reconstruction (TRAM, DIEP), implant selection strategies, and facial fat grafting.\n\nHe is a member of the Lithuanian Society of Plastic and Reconstructive Surgery and the Lithuanian Wound Management Association."
+    },
+    {
+      "name": "Mantas Kievišas",
+      "slug": "mantas-kevisas",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-mantas-kevisas.jpg",
+      "bio": "Dr. Mantas Kievišas is a plastic and reconstructive surgeon with more than seven years of clinical experience, performing over 300 procedures annually. His surgical profile is characterized by high operative volume, structured technique, and a strong focus on contemporary body contouring strategies.\n\nHis clinical interests include post-bariatric surgery, advanced liposuction technologies, fat grafting, facial and neck surgery, and both reconstructive and aesthetic breast surgery.\n\nDr. Kievišas has completed international fellowships and professional training in the United States, Finland, and France. He is the author of more than 40 scientific publications and has presented research at national and international meetings. His recent scientific work has focused on adipocyte viability and surgeon efficiency in different liposuction techniques, reflecting his interest in optimizing both biological outcomes and operative performance.\n\nIn addition to clinical work, he has been actively involved in academic activities, mentoring students and contributing to scientific discussions within the plastic surgery community."
+    },
+    {
+      "name": "Ghassan W. Said",
+      "slug": "ghassan-said",
+      "title": "Plastic & Reconstructive Surgeon, International Practice",
+      "tag": "Faculty",
+      "photo": "images/speaker-ghassan.jpg",
+      "bio": "Dr. Ghassan W. Said is a plastic and reconstructive surgeon with broad international clinical experience spanning Europe, the Middle East, Africa and South America. His surgical background includes advanced training and practice at the Brazilian Institute of Plastic Surgery in São Paulo, Azevedo Clinic in Belém (Brazil), as well as clinical work in Lebanon, Lithuania and Ivory Coast.\n\nHe is particularly focused on body contouring surgery and is widely recognized for gluteal procedures, including Brazilian Butt Lift (BBL) and buttock augmentation with implants. His work integrates modern liposuction technologies, fat grafting principles, and structured contouring concepts aimed at achieving proportion, projection, and long-term tissue stability.\n\nDr. Said completed his medical degree at Kaunas Medical University and previously earned a Bachelor's degree in Medical Laboratory Technology from the American University of Beirut. He later completed residency training in plastic and reconstructive surgery at Vilnius University, complemented by an exchange program in Brazil.\n\nHe operates in multicultural clinical environments and frequently participates in international congresses, including ISAPS, IMCAS, and regional plastic surgery forums.\n\nDr. Said is a member of the Lebanese Society of Plastic, Reconstructive and Aesthetic Surgery (LSPRAS), the Association of Plastic Surgeons of Lebanese Descent (APSLD), and the Lithuanian Society of Plastic and Reconstructive Surgery."
+    },
+    {
+      "name": "Audrius Pakulis",
+      "slug": "audrius-pakulis",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-audrius-pakulis.jpg",
+      "bio": "Dr. Audrius Pakulis is a plastic and reconstructive surgeon with more than 10 years of clinical experience and a high operative volume. His clinical practice focuses on combined aesthetic operations involving breast surgery, facial procedures, and body contouring, requiring comprehensive surgical planning and multidisciplinary anatomical understanding.\n\nHe completed his medical education and specialist training at the Lithuanian University of Health Sciences, followed by residency in plastic and reconstructive surgery at the Hospital of the Lithuanian University of Health Sciences Kaunas Clinics. His professional development also includes training experience in the United States and participation in international educational programs organized by the American Society of Plastic Surgeons.\n\nDr. Pakulis is an active member of the American Society of Plastic Surgeons (ASPS) and participates in its Leadership Development Committee, reflecting his involvement in the international professional community. He is also a member of the Lithuanian Wound Healing Association, with continued interest in wound management and reconstructive surgery.\n\nThroughout his career, he has regularly participated in international conferences and professional seminars in Europe and the United States, presenting research and exchanging clinical experience with colleagues in the field."
+    },
+    {
+      "name": "Tomas Budrius",
+      "slug": "tomas-budrius",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-tomas-budrius.jpg",
+      "bio": "Dr. Tomas Budrius is a plastic and reconstructive surgeon with more than a decade of clinical experience and a strong surgical foundation in aesthetic surgery. His professional path includes general surgery training followed by specialization in plastic and reconstructive surgery, providing him with a comprehensive understanding of deep anatomical structures and abdominal wall pathology.\n\nAmong his distinctive procedures are HD liposuction (liposculpture), composite breast and gluteal augmentation, and minimally invasive brow lift techniques.\n\nHD liposuction differs from conventional fat removal by following anatomical muscle insertion lines, allowing for precise contour enhancement and definition of natural body structures. The technique is primarily indicated for patients in good physical condition seeking refined muscular contouring.\n\nDr. Budrius also applies a composite augmentation approach, combining smaller implants with autologous fat grafting to achieve balanced volume, shape, and soft tissue integration in breast and gluteal procedures.\n\nA particular focus of his practice is abdominoplasty and abdominal contour surgery, supported by his background in abdominal surgery. He emphasizes layered closure techniques designed to minimize scar visibility and optimize postoperative healing."
+    },
+    {
+      "name": "Andrius Pajėda",
+      "slug": "andrius-pajeda",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-andrius-pajeda.jpg",
+      "bio": "Dr. Andrius Pajėda is a plastic and reconstructive surgeon with more than 11 years of clinical experience and an annual surgical volume exceeding 400 procedures. His practice covers breast surgery, rhinoplasty, facial procedures, body contouring, and combined operations requiring comprehensive operative planning and technical versatility.\n\nHe completed his medical studies at the Lithuanian University of Health Sciences, followed by residency training in plastic and reconstructive surgery at Vilnius University Hospital Santaros Clinics. His early academic background also includes studies in the United Kingdom, contributing to a broad international perspective.\n\nDr. Pajėda has expanded his surgical expertise through fellowships and advanced training in the United States, Sweden, Finland, and France. Notably, his professional development includes training at \"Akademikliniken\" in Stockholm and participation in specialized flap dissection and aging science courses.\n\nHe regularly attends international congresses and professional meetings, remaining actively engaged in the global plastic surgery community."
+    },
+    {
+      "name": "Simonas Kaupas",
+      "slug": "simonas-kaupas",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-simonas-kaupas.jpg",
+      "bio": "Dr. Simonas Kaupas is a plastic and reconstructive surgeon with more than 16 years of medical experience, whose clinical work combines aesthetic surgery with complex reconstructive procedures. His surgical practice covers aesthetic operations, breast reconstruction, facial nerve repair, hand and wrist surgery, and reconstruction of soft tissue and bone defects following trauma or oncological treatment.\n\nHis training pathway includes medical studies at Vilnius University followed by residency programs in orthopaedics–traumatology and later plastic and reconstructive surgery. This multidisciplinary background provides a strong foundation in musculoskeletal and soft-tissue reconstruction, particularly in cases involving trauma, nerve injury, and functional restoration.\n\nDr. Kaupas has gained international experience through professional training and fellowships in Sweden, France, the Czech Republic, and Nepal, with a particular focus on hand surgery, reconstructive techniques, and complex defect management. His clinical approach integrates microsurgical principles, functional reconstruction, and aesthetic considerations.\n\nAlongside his clinical practice, Dr. Kaupas actively participates in scientific and professional meetings within the Baltic and international plastic surgery community, presenting clinical cases and contributing to discussions on reconstructive and aesthetic surgery advancements."
+    },
+    {
+      "name": "Austė Aleksandravičiūtė-Šviažienė, PhD",
+      "slug": "auste-aleksandraviciute-sviaziene",
+      "title": "Strategic Communication & Public Affairs Expert, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-aukse-aleksandraviciute-sviaziene.jpg",
+      "bio": "Dr. Austė Aleksandravičiūtė-Šviažienė is a strategic communication and public affairs expert with more than 13 years of professional experience in public relations, health communication, media relations, stakeholder engagement, and crisis management.\n\nShe holds a PhD in Political Science, specializing in crisis communication strategies. Her academic work focuses on how institutions communicate under conditions of uncertainty, reputational risk, and public scrutiny, with particular attention to health and regulated sectors. Her research bridges theory and practice, offering evidence-based frameworks for building trust and resilience in complex communication environments.\n\nDr. Aleksandravičiūtė-Šviažienė has guided strategic communication initiatives in high-stakes contexts, helping organizations strengthen credibility, manage risk, and safeguard reputation. Her expertise includes crisis preparedness, stakeholder mapping, media strategy, and navigating public discourse in the digital era.\n\nAlongside her professional practice, she is actively engaged in academic research and teaching, contributing to scholarly publications and lecturing on strategic and crisis communication. Her work integrates analytical depth with practical application, supporting organizations in achieving sustainable impact through responsible, transparent, and strategically aligned communication."
+    },
+    {
+      "name": "Gediminas Samulėnas, PhD",
+      "slug": "gediminas-samulenas",
+      "title": "Plastic & Reconstructive Surgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-gediminas-samulenas.jpg",
+      "bio": "Dr. Gediminas Samulėnas is a board-certified plastic and reconstructive surgeon and Doctor of Medical Sciences with more than 10 years of clinical experience. He performs over 250 surgical procedures annually, including facelifts, combined aesthetic surgeries, breast procedures, and body contouring operations.\n\nAlongside his surgical practice, Dr. Samulėnas is actively engaged in academic and scientific work. He completed his doctoral research in plastic and reconstructive surgery, focusing on molecular and genetic aspects of connective tissue disorders, with publications in peer-reviewed international journals such as Genes, Medicina, and the European Journal of Plastic Surgery. His research interests include wound healing, Dupuytren's contracture, regenerative therapies, and evidence-based surgical innovation.\n\nHe serves as a lecturer at Kaunas College and has held leadership roles within the academic community, including membership in university governance bodies. Internationally, he is recognized as a lecturer-expert, providing advanced training in facial fillers and botulinum toxin injection techniques.\n\nDr. Samulėnas has completed professional training in Germany and Finland and regularly participates in international congresses and masterclasses. His professional profile integrates academic rigor, surgical precision, and expertise in both operative and minimally invasive aesthetic procedures."
+    },
+    {
+      "name": "Karolis Bareikis",
+      "slug": "karolis-bareikis",
+      "title": "Neurosurgeon, Lithuania",
+      "tag": "Faculty",
+      "photo": "images/speaker-karolis-bareikis.jpg",
+      "bio": "Karolis Bareikis, MD is a neurosurgeon with dedicated clinical and research interests in cerebrovascular and skull base surgery. His work focuses on the management of complex brain vascular conditions and technically demanding skull base pathologies, applying advanced microsurgical techniques and evidence-based strategies to optimize patient outcomes.\n\nDr. Bareikis also serves as the Coordinator of the Neurosurgery Training Programme, where he places particular emphasis on Medical Professionalism and Organisational Culture. He is actively involved in shaping a modern training environment that prioritizes ethical leadership, team performance, accountability, and patient-centered care.\n\nHis professional philosophy combines surgical precision with a strong commitment to education, systems thinking, and the development of resilient, high-functioning neurosurgical teams."
     }
   ],
   "sessions": [
     {
       "num": "01",
-      "name": "Breast Surgery",
-      "description": "Four expert presentations exploring contemporary approaches to breast augmentation, reduction, reconstruction, and revision surgery, followed by an interactive discussion focused on clinical decision-making and outcomes.",
+      "name": "Body Contouring",
+      "description": "A session dedicated to modern body contouring techniques, including abdominoplasty, liposuction, and buttock augmentation procedures, concluding with a case-based discussion.",
       "count": "4 Presentations + Discussion",
       "day": "Friday"
     },
     {
       "num": "02",
-      "name": "Body Contouring",
-      "description": "A session dedicated to modern body contouring techniques, including abdominoplasty, liposuction, and combination procedures, concluding with a case-based discussion.",
-      "count": "4 Presentations + Discussion",
+      "name": "Breast Surgery",
+      "description": "Five presentations exploring contemporary approaches to breast augmentation, reduction, reconstruction, and revision surgery, including implant techniques, breast lifts, and mastopexy.",
+      "count": "5 Presentations",
       "day": "Friday"
     },
     {
       "num": "03",
       "name": "Facial Surgery",
-      "description": "Four presentations covering key aspects of facial aesthetic surgery, from surgical planning to refined technique, followed by open discussion and exchange of experience.",
-      "count": "4 Presentations + Discussion",
+      "description": "Five presentations covering key aspects of facial aesthetic surgery — endoscopic techniques, SMAS fixation, submandibular gland reduction, and face lift refinements.",
+      "count": "5 Presentations",
       "day": "Friday"
     },
     {
       "num": "04",
-      "name": "Clinical Philosophy",
-      "description": "A reflective session on surgical thinking, patient selection, ethics, and long-term vision in plastic surgery practice, ending with a moderated discussion.",
+      "name": "Surgical Drawing & Marking",
+      "description": "Practical presentations focused on preoperative marking and surgical planning principles for breast, abdomen, liposuction, and face procedures, followed by discussion and clinical insights.",
       "count": "4 Presentations + Discussion",
       "day": "Saturday"
     },
     {
       "num": "05",
-      "name": "Surgical Drawing & Marking",
-      "description": "Practical presentations focused on preoperative marking and surgical planning principles for breast, abdomen, liposuction, and face procedures, followed by discussion and clinical insights.",
+      "name": "Clinical Philosophy",
+      "description": "A reflective session on surgical thinking, professional culture, digital-era health communication, and the perception of beauty, ending with a moderated discussion.",
       "count": "4 Presentations + Discussion",
       "day": "Saturday"
     }
@@ -79,41 +183,87 @@
     "friday": {
       "label": "Friday, 19th June",
       "blocks": [
-        { "time": "9:00 – 11:00", "title": "Breast Surgery Session", "type": "session", "detail": "4 presentations + Discussion, Q&A" },
+        { "time": "", "title": "Welcome Talk by Organising Committee", "type": "session" },
+        {
+          "time": "9:00 – 11:00", "title": "Body Contouring Session", "type": "session", "detail": "4 Presentations + Discussion",
+          "presentations": [
+            { "time": "9:00 – 9:20", "speaker": "Mantas Kievišas", "topic": "360/ext/regular TT: why longer is more attractive" },
+            { "time": "9:20 – 9:40", "speaker": "Ghassan W. Said", "topic": "Ext TT is not a TT scar extension" },
+            { "time": "10:00 – 10:20", "speaker": "Audrius Pakulis", "topic": "Dermal flaps for buttocks auto augmentation. Why it is not so popular anymore" },
+            { "time": "10:20 – 10:40", "speaker": "Simonas Kaupas", "topic": "Abdomen liposuction and TT better results or just increased risk for flap necrosis" },
+            { "time": "10:40 – 11:00", "speaker": "", "topic": "Discussion" }
+          ]
+        },
         { "time": "11:00 – 11:40", "title": "Coffee Break", "type": "break" },
-        { "time": "11:40 – 13:40", "title": "Body Contouring Session", "type": "session", "detail": "4 presentations + Discussion, Q&A" },
-        { "time": "13:40 – 14:40", "title": "Lunch", "type": "break" },
-        { "time": "14:40 – 16:40", "title": "Facial Surgery Session", "type": "session", "detail": "4 presentations + Discussion, Q&A" },
+        {
+          "time": "11:40 – 13:20", "title": "Breast Surgery Session", "type": "session", "detail": "5 Presentations",
+          "presentations": [
+            { "time": "11:40 – 12:00", "speaker": "Tautrimas Aštrauskas", "topic": "Muscle-Splitting Technique for Inner Breast Lift with Implant Augmentation and Hybrid Fat Transfer" },
+            { "time": "12:00 – 12:20", "speaker": "Goda Aštrauskaitė", "topic": "Back to where it was, there it should have been — breast implant removal with lift" },
+            { "time": "12:20 – 12:40", "speaker": "Mantas Sakalauskas", "topic": "Baroudi stitches in breast mastopexy or reduction" },
+            { "time": "12:40 – 13:00", "speaker": "Raul Chioibas, MD, PhD", "topic": "\"Feather Touch\": How to make a breast augmentation experience easy" },
+            { "time": "13:00 – 13:20", "speaker": "Tautvydas Urbonas", "topic": "Central pedicle and internal bra for breast reduction/lift" }
+          ]
+        },
+        { "time": "13:20 – 14:20", "title": "Lunch", "type": "break" },
+        {
+          "time": "14:20 – 16:20", "title": "Facial Surgery Session", "type": "session", "detail": "5 Presentations",
+          "presentations": [
+            { "time": "14:20 – 14:40", "speaker": "Tomas Budrius", "topic": "Facial rejuvenation techniques using endoscope" },
+            { "time": "14:40 – 15:00", "speaker": "Andrius Pajėda", "topic": "Different SMAS fixation ideas in midface for nasolabial fold improvement" },
+            { "time": "15:00 – 15:20", "speaker": "Gediminas Samulėnas, PhD", "topic": "Submandibular glands reduction. Is it a safe procedure?" },
+            { "time": "15:20 – 15:40", "speaker": "Romeu Fadul", "topic": "Facelift after permanent fillers" },
+            { "time": "16:00 – 16:20", "speaker": "Saulius Vikšraitis", "topic": "Technique pearls of face lift that improve surgical outcomes" }
+          ]
+        },
         { "time": "19:00", "title": "Gala Dinner", "type": "social" }
       ]
     },
     "saturday": {
       "label": "Saturday, 20th June",
       "blocks": [
-        { "time": "10:00 – 12:00", "title": "Clinical Philosophy Session", "type": "session", "detail": "4 presentations + Q&A, Discussion" },
-        { "time": "12:00 – 12:40", "title": "Coffee Break", "type": "break" },
-        { "time": "12:40 – 14:20", "title": "Surgical Drawing & Marking Session", "type": "session", "detail": "Breast, Abdomen, Liposuction, Face + Discussion" }
+        {
+          "time": "10:00 – 11:30", "title": "Surgical Drawing & Marking Session", "type": "session", "detail": "4 Presentations + Discussion",
+          "presentations": [
+            { "time": "10:00 – 10:15", "speaker": "", "topic": "Breasts" },
+            { "time": "10:15 – 10:30", "speaker": "", "topic": "Abdominal" },
+            { "time": "10:30 – 10:45", "speaker": "", "topic": "Liposuction" },
+            { "time": "10:45 – 11:00", "speaker": "", "topic": "Face" },
+            { "time": "11:15 – 11:30", "speaker": "", "topic": "Discussion" }
+          ]
+        },
+        { "time": "11:30 – 12:00", "title": "Coffee Break", "type": "break" },
+        {
+          "time": "12:00 – 13:40", "title": "Clinical Philosophy Session", "type": "session", "detail": "4 Presentations + Discussion",
+          "presentations": [
+            { "time": "12:00 – 12:20", "speaker": "Karolis Bareikis", "topic": "\"Just joking\": Power, Culture and Professional Boundaries in Hierarchical Teams" },
+            { "time": "12:20 – 12:40", "speaker": "Romeu Fadul", "topic": "Plastic surgery from business perspective" },
+            { "time": "12:40 – 13:00", "speaker": "Austė Aleksandravičiūtė-Šviažienė, PhD", "topic": "Building trust online: contemporary health communication in the digital era" },
+            { "time": "13:00 – 13:20", "speaker": "Raul Chioibas, MD, PhD", "topic": "Human Perception of beauty in the digitalized era" },
+            { "time": "13:20 – 13:40", "speaker": "", "topic": "Discussion" }
+          ]
+        }
       ]
     }
   },
   "testimonials": [
     {
-      "quote": "KPSM is where the real conversations happen. The masterclasses alone justified the trip — but the hallway discussions between sessions were equally transformative for my practice.",
-      "name": "Dr. Sofia Reyes",
-      "role": "Aesthetic Surgeon, Barcelona",
-      "initial": "S"
+      "quote": "As a plastic surgeon, I strongly believe that progress in our field does not happen in isolation — it happens through collaboration. This conference was created as a platform to build meaningful professional networks, openly share knowledge, and engage in thoughtful discussions about both surgical techniques and clinical philosophy. When surgeons come together to exchange insights, challenge perspectives, and learn from one another, we elevate not only our individual practice, but the entire specialty.",
+      "name": "Andrius Pajėda",
+      "role": "Plastic & Reconstructive Surgeon, Conference Organiser",
+      "initial": "A"
     },
     {
-      "quote": "The clinical philosophy session opened my eyes to possibilities I had not considered. I returned home and completely restructured my pre-operative workflow.",
-      "name": "Dr. Raj Patel",
-      "role": "Reconstructive Surgeon, London",
+      "quote": "As plastic surgeons, we carry not only skill in our hands, but responsibility in our experience. I feel truly obligated to share the knowledge I have gained over the years — the lessons learned in the operating room, the philosophy behind decision-making, the nuances that are never written in textbooks. But for me, this conference is not only about teaching. It is equally about listening — to younger plastic surgeons, to their ideas, their questions, their different perspectives shaped by a new generation and new technologies. Growth in our field must go both ways — from experience to innovation, and from innovation back to experience.",
+      "name": "Romeu Fadul",
+      "role": "Plastic Surgeon, São Paulo, Brazil",
       "initial": "R"
     },
     {
-      "quote": "As an early-career surgeon, the mentorship programme at KPSM connected me with leaders who have genuinely shaped my trajectory. The calibre of faculty is unmatched.",
-      "name": "Dr. Lina Hoffmann",
-      "role": "Fellow, Charité Berlin",
-      "initial": "L"
+      "quote": "I strongly believe that the work of a plastic surgeon begins long before we enter the operating room. It starts at the very first consultation — when we meet the patient, listen carefully, understand expectations, and build trust. It continues when we mark the body before surgery, translating anatomy, experience, and aesthetic vision into precise surgical planning. That is why I am particularly happy that this conference includes a practical session on surgical drawing and marking. This step is not a formality — it is one of the most critical parts of the entire surgical process.",
+      "name": "Tautvydas Urbonas",
+      "role": "Plastic Surgeon, Lithuania",
+      "initial": "T"
     }
   ],
   "venue": {
@@ -131,11 +281,11 @@
     "price": "€250",
     "price_note": "Early bird · Regular price €300",
     "button_text": "Buy tickets",
-    "button_link": "#"
+    "button_link": "https://fienta.com/kpsm-kaunas-plastic-surgery-meeting-2026"
   },
   "footer": {
     "brand_text": "The premier plastic and reconstructive surgery meeting in the Baltics. Kaunas, Lithuania.",
-    "email": "info@kpsm.lt",
+    "email": "andriuspajeda@gmail.com",
     "year": "2026"
   }
 }

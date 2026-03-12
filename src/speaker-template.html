@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
+  <title>{{speaker.name}} — KPSM 2026</title>
+  <meta name="description" content="{{speaker.name}} — {{speaker.title}}. Speaking at the Kaunas Plastic Surgery Meeting, 19–20 June 2026.">
+  <link rel="canonical" href="https://kpsm-landing.fly.dev/speakers/{{speaker.slug}}/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{speaker.name}} — KPSM 2026">
+  <meta property="og:description" content="{{speaker.title}}. Speaking at the Kaunas Plastic Surgery Meeting.">
+  <meta property="og:url" content="https://kpsm-landing.fly.dev/speakers/{{speaker.slug}}/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap" rel="stylesheet">
+
+  <script defer data-domain="kpsm-landing.fly.dev" src="https://plausible.io/js/script.js"></script>
+
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+    :root {
+      --orange: #ff3e07;
+      --orange-text: #c43200;
+      --orange-light: #ff6438;
+      --lavender: #c8c7ff;
+      --lavender-light: #e4e3ff;
+      --lavender-dim: #a8a7e0;
+      --black: #000000;
+      --white: #ffffff;
+      --gray-50: #f7f7f7;
+      --gray-100: #efefef;
+      --gray-200: #e0e0e0;
+      --gray-400: #999999;
+      --gray-600: #555555;
+      --font: 'Montserrat', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font);
+      font-weight: 300;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+      background: var(--orange);
+      color: var(--white);
+    }
+
+    /* ============ NAV ============ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 14px 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--gray-200);
+    }
+    nav .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 80px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-register {
+      padding: 10px 28px;
+      background: var(--orange);
+      color: var(--white) !important;
+      border-radius: 0;
+      transition: all 0.3s ease !important;
+    }
+    .nav-register:hover {
+      background: var(--orange-light) !important;
+    }
+
+    /* ============ CONTENT ============ */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 80px);
+    }
+
+    .speaker-page {
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--orange);
+      margin-bottom: 48px;
+      transition: gap 0.3s;
+    }
+    .back-link:hover { gap: 12px; }
+
+    .speaker-hero {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .speaker-photo-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--lavender-light);
+      position: relative;
+    }
+    .speaker-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .speaker-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: var(--lavender-light);
+      position: relative;
+    }
+    .speaker-photo-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 35%, rgba(200,199,255,0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 70%, rgba(255,62,7,0.06) 0%, transparent 40%);
+    }
+
+    .speaker-details {
+      padding-top: 12px;
+    }
+
+    .speaker-tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange-text);
+      padding: 5px 12px;
+      background: rgba(255,62,7,0.08);
+      margin-bottom: 20px;
+    }
+
+    .speaker-name {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .speaker-title-text {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .speaker-bio {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    /* ============ PRESENTATIONS ============ */
+    .presentations-section {
+      margin-top: 8px;
+    }
+
+    .presentations-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 20px;
+    }
+
+    .presentation-card {
+      padding: 24px 0;
+      border-top: 1px solid var(--gray-200);
+    }
+    .presentation-card:last-child {
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .presentation-session {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange-text);
+      margin-bottom: 6px;
+    }
+
+    .presentation-topic {
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .presentation-time {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--gray-400);
+    }
+
+    .presentation-day {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--gray-600);
+    }
+
+    /* ============ OTHER SPEAKERS ============ */
+    .other-speakers {
+      padding: 80px 0;
+      background: var(--gray-50);
+    }
+    .other-speakers-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 24px;
+    }
+    .other-speakers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .other-speaker-link {
+      display: block;
+      text-decoration: none;
+      color: var(--black);
+      padding: 16px 20px;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      transition: all 0.3s ease;
+    }
+    .other-speaker-link:hover {
+      border-color: var(--orange);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .other-speaker-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .other-speaker-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange-text);
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: var(--black);
+      color: var(--white);
+      padding: 80px 0 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .footer-logo img {
+      height: 50px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 320px;
+      line-height: 1.7;
+    }
+    .footer-col h4 {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-bottom p {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-badges { display: flex; gap: 8px; }
+    .footer-badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1000px) {
+      .speaker-hero { grid-template-columns: 300px 1fr; gap: 40px; }
+      .other-speakers-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .speaker-hero { grid-template-columns: 1fr; gap: 32px; }
+      .speaker-photo-wrap { max-width: 360px; }
+      .other-speakers-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 500px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav aria-label="Main navigation">
+    <div class="container">
+      <a href="/" class="nav-logo">
+        <img src="/images/KPSM logo mazas juodas.png" alt="KPSM">
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#speakers">Speakers</a></li>
+        <li><a href="/#programme">Programme</a></li>
+        <li><a href="/#venue">Venue</a></li>
+        <li><a href="/#contact">Contact</a></li>
+        <li><a href="https://fienta.com/kpsm-kaunas-plastic-surgery-meeting-2026" class="nav-register" target="_blank">Buy tickets</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== SPEAKER ===== -->
+  <main>
+  <div class="speaker-page">
+    <div class="container">
+      <a href="/#speakers" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+        All speakers
+      </a>
+
+      <div class="speaker-hero">
+        <div class="speaker-photo-wrap">
+          {{speaker.photo_html}}
+        </div>
+        <div class="speaker-details">
+          <h1 class="speaker-name">{{speaker.name}}</h1>
+          <p class="speaker-title-text">{{speaker.title}}</p>
+          {{speaker.bio_html}}
+          {{speaker.presentations_html}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== OTHER SPEAKERS ===== -->
+  <section class="other-speakers">
+    <div class="container">
+      <p class="other-speakers-label">Other Speakers</p>
+      <div class="other-speakers-grid">
+        {{other_speakers}}
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer aria-label="Footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="/images/KPSM logo pilnas juodas.png" alt="Kaunas Plastic Surgery Meeting">
+          </div>
+          <p>{{footer.brand_text}}</p>
+        </div>
+        <div class="footer-col">
+          <h4>Meeting</h4>
+          <ul>
+            <li><a href="/#programme">Programme</a></li>
+            <li><a href="/#speakers">Faculty</a></li>
+            <li><a href="/#programme">Tracks</a></li>
+            <li><a href="/#venue">Venue</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Attend</h4>
+          <ul>
+            <li><a href="https://fienta.com/kpsm-kaunas-plastic-surgery-meeting-2026" target="_blank">Buy tickets</a></li>
+            <li><a href="/#venue">Travel & Venue</a></li>
+            <li><a href="/#contact">Contact Us</a></li>
+            <li><a href="/terms.html">Terms</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:{{footer.email}}">{{footer.email}}</a></li>
+            <li><a href="/#contact">Contact Form</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/cookies.html">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {{footer.year}} Kaunas Plastic Surgery Meeting. All rights reserved.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">CME Accredited</span>
+          <span class="footer-badge">EACCME</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+node_modules
+dist
+.claude
+images/drive-download-*
+images/Atnaujinta*
+images/*.docx
+framer-components
+drive-download-*
+*.pages
+scripts

@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-180.png">
   <title>KPSM {{footer.year}} — Kaunas Plastic Surgery Meeting</title>
   <meta name="description" content="{{hero.subtitle}}">
   <link rel="canonical" href="https://kpsm-landing.fly.dev/">
@@ -49,7 +52,7 @@
       "@type": "Offer",
       "price": "690",
       "priceCurrency": "EUR",
-      "url": "https://kpsm-landing.fly.dev/#register",
+      "url": "https://kpsm-landing.fly.dev/#tickets",
       "availability": "https://schema.org/InStock"
     }
   }
@@ -159,18 +162,18 @@
       align-items: center;
     }
     .nav-logo img {
-      height: 40px;
+      height: 48px;
       width: auto;
       display: block;
     }
     .nav-links {
       display: flex;
-      gap: 32px;
+      gap: 36px;
       list-style: none;
       align-items: center;
     }
     .nav-links a {
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -180,7 +183,7 @@
     }
     .nav-links a:hover { color: var(--orange); }
     .nav-register {
-      padding: 10px 28px;
+      padding: 14px 32px;
       background: var(--orange);
       color: var(--white) !important;
       border-radius: 0;
@@ -189,56 +192,124 @@
     .nav-register:hover {
       background: var(--orange-light) !important;
     }
+    .burger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      z-index: 110;
+    }
+    .burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--black);
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+    .burger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .burger.active span:nth-child(2) { opacity: 0; }
+    .burger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      z-index: 99;
+      padding-top: 100px;
+    }
+    .mobile-menu.open { display: flex; align-items: center; justify-content: center; }
+    .mobile-menu ul {
+      list-style: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .mobile-menu a {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--black);
+      transition: color 0.3s;
+    }
+    .mobile-menu a:hover { color: var(--orange); }
+    .mobile-menu .nav-register {
+      display: inline-block;
+      padding: 14px 36px;
+      margin-top: 8px;
+    }
+
+    /* Speaker card links */
+    .speaker-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .speaker-card-link .speaker-card {
+      cursor: pointer;
+    }
 
     /* ============ HERO ============ */
     .hero {
       min-height: 100vh;
-      display: flex;
-      align-items: center;
       position: relative;
       overflow: hidden;
-      background: var(--white);
+      background: var(--gray-50);
     }
-    /* Lavender blob */
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -15%;
-      right: -8%;
-      width: 55%;
-      height: 130%;
-      background: var(--lavender);
-      border-radius: 0 0 0 40%;
-      z-index: 0;
+    .hero > .container {
+      max-width: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
     }
-    /* Orange accent circle */
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 8%;
-      right: 12%;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: var(--orange);
-      z-index: 1;
+    .hero-inner {
+      display: contents;
     }
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 100px 0 40px;
+      padding: 140px clamp(24px, 5vw, 80px) 80px;
+      max-width: 620px;
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .hero-visual {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+    }
+    .hero-swirl { display: none; }
+    .hero-visual-face {
+      position: absolute;
+      top: 0;
+      right: 0;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      z-index: 2;
     }
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      font-size: 0.75rem;
+      font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--orange-text);
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
     .hero-badge::before {
       content: '';
@@ -247,28 +318,28 @@
       background: var(--orange);
     }
     .hero h1 {
-      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
       font-weight: 700;
       line-height: 1.0;
       letter-spacing: -0.03em;
       color: var(--black);
-      margin-bottom: 10px;
-      max-width: 700px;
+      margin-bottom: 12px;
+      max-width: 750px;
     }
     .hero h1 .accent {
       color: var(--orange);
     }
     .hero-sub {
-      font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
       font-weight: 300;
       color: var(--gray-600);
-      margin-bottom: 28px;
-      max-width: 500px;
+      margin-bottom: 32px;
+      max-width: 540px;
     }
     .hero-meta {
       display: flex;
-      gap: 40px;
-      margin-bottom: 28px;
+      gap: 44px;
+      margin-bottom: 32px;
     }
     .hero-meta-item {
       display: flex;
@@ -276,14 +347,14 @@
       gap: 4px;
     }
     .hero-meta-label {
-      font-size: 0.62rem;
+      font-size: 0.68rem;
       font-weight: 700;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--gray-400);
     }
     .hero-meta-value {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       font-weight: 500;
       color: var(--black);
     }
@@ -298,9 +369,9 @@
       gap: 10px;
       background: var(--orange);
       color: var(--white);
-      padding: 16px 36px;
+      padding: 18px 40px;
       font-family: var(--font);
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -316,9 +387,9 @@
       gap: 10px;
       background: transparent;
       color: var(--black);
-      padding: 16px 36px;
+      padding: 18px 40px;
       font-family: var(--font);
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -339,30 +410,35 @@
 
     /* Hero stats */
     .hero-stats {
-      display: flex;
-      gap: 0;
-      margin-top: 32px;
+      display: inline-flex;
+      margin-top: 44px;
+      margin-bottom: 52px;
+      border: 1px solid rgba(0,0,0,0.1);
+      background: rgba(255,255,255,0.35);
     }
     .hero-stat {
-      padding: 20px 36px;
-      border: 1px solid var(--gray-200);
-      border-right: none;
+      padding: 26px 32px;
       text-align: center;
+      border-right: 1px solid rgba(0,0,0,0.1);
       min-width: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-    .hero-stat:last-child { border-right: 1px solid var(--gray-200); }
+    .hero-stat:last-child { border-right: none; }
     .hero-stat-num {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       font-weight: 700;
       color: var(--orange);
       line-height: 1.1;
     }
     .hero-stat-label {
-      font-size: 0.65rem;
+      font-size: 0.72rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gray-400);
+      color: rgba(0,0,0,0.45);
       margin-top: 4px;
     }
 
@@ -416,8 +492,9 @@
       overflow: hidden;
       background: var(--white);
       transition: all 0.4s ease;
+      flex: 1;
     }
-    .speaker-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+    .speaker-card-link:hover .speaker-card { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
     .speaker-photo {
       height: 300px;
       position: relative;
@@ -431,7 +508,7 @@
       display: block;
       transition: transform 0.6s ease;
     }
-    .speaker-card:hover .speaker-photo img { transform: scale(1.04); }
+    .speaker-card-link:hover .speaker-photo img { transform: scale(1.04); }
     .speaker-photo-inner {
       width: 100%;
       height: 100%;
@@ -446,7 +523,7 @@
         radial-gradient(ellipse at 50% 35%, rgba(200,199,255,0.4) 0%, transparent 50%),
         radial-gradient(ellipse at 50% 70%, rgba(255,62,7,0.06) 0%, transparent 40%);
     }
-    .speaker-info { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
+    .speaker-info { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; justify-content: flex-start; min-height: 110px; }
     .speaker-name {
       font-size: 1.05rem;
       font-weight: 700;
@@ -457,6 +534,29 @@
       font-weight: 300;
       color: var(--gray-600);
       line-height: 1.5;
+    }
+    .speaker-topics {
+      list-style: none;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .speaker-topics li {
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--gray-600);
+      line-height: 1.5;
+      padding: 3px 0;
+    }
+    .speaker-topics li::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      background: var(--orange);
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: middle;
     }
     .speaker-card { display: flex; flex-direction: column; }
     .speaker-tag {
@@ -502,11 +602,15 @@
     .sessions-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
       gap: 1px;
       background: rgba(255,255,255,0.08);
       position: relative;
       z-index: 1;
     }
+    .session-card-filler { background: var(--black); }
+    .session-card-link { text-decoration: none; color: inherit; display: block; margin: 0; padding: 0; height: 100%; }
+    .session-card-filler { background: var(--black); }
     .session-card {
       padding: 48px 36px;
       background: var(--black);
@@ -514,6 +618,8 @@
       transition: all 0.4s ease;
       display: flex;
       flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
     }
     .session-card::before {
       content: '';
@@ -600,6 +706,7 @@
       padding: 16px 0;
       border-bottom: 1px solid var(--gray-200);
       align-items: flex-start;
+      scroll-margin-top: 100px;
     }
     .schedule-time {
       font-size: 0.78rem;
@@ -630,6 +737,71 @@
       color: var(--orange);
       font-weight: 700;
     }
+    .schedule-presentations {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .pres-row {
+      display: flex;
+      gap: 16px;
+      padding: 6px 0;
+      border-top: 1px solid var(--gray-100, #f0f0f0);
+      align-items: baseline;
+    }
+    .pres-row:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+    .pres-time {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--gray-400);
+      white-space: nowrap;
+      min-width: 80px;
+      font-variant-numeric: tabular-nums;
+    }
+    .pres-detail {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--gray-600);
+      line-height: 1.4;
+    }
+    .pres-speaker {
+      font-weight: 500;
+      color: var(--black);
+    }
+    .pres-topic {
+      font-style: italic;
+    }
+
+    /* ============ PARTNERS ============ */
+    .partners-strip {
+      background: var(--orange);
+      padding: 48px 0;
+    }
+    .partners-strip .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+    .partners-strip img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      opacity: 0.95;
+    }
+    @media (max-width: 600px) {
+      .partners-strip .container {
+        gap: 40px;
+      }
+      .partners-strip img {
+        height: 30px;
+      }
+    }
 
     /* ============ TESTIMONIALS ============ */
     .testimonials {
@@ -652,7 +824,7 @@
       transition: all 0.4s ease;
       border-bottom: 3px solid transparent;
     }
-    .testimonial:nth-child(2) { margin-top: 28px; }
+    .testimonial:nth-child(2) { margin-top: 0; }
     .testimonial:hover {
       border-bottom-color: var(--orange);
       transform: translateY(-4px);
@@ -681,8 +853,9 @@
       border-top: 1px solid var(--gray-200);
     }
     .testimonial-avatar {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
       border-radius: 50%;
       background: var(--lavender-light);
       display: flex;
@@ -723,7 +896,7 @@
     .venue-img {
       width: 100%;
       height: 100%;
-      background: url('images/kaunas-aerial.jpg') center center / cover no-repeat;
+      background: url('images/venue-interior.jpg') center center / cover no-repeat;
       position: relative;
       overflow: hidden;
     }
@@ -733,15 +906,15 @@
       inset: 0;
       background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, transparent 60%);
     }
-    /* Orange corner accent */
+    /* Orange shape accent */
     .venue-visual::before {
       content: '';
       position: absolute;
-      top: -16px;
-      left: -16px;
-      width: 100px;
-      height: 100px;
-      background: var(--orange);
+      bottom: -40px;
+      left: -40px;
+      width: 160px;
+      height: 160px;
+      background: url('images/shape-orange.png') center / contain no-repeat;
       z-index: 1;
     }
     .venue-text .section-label { margin-bottom: 12px; }
@@ -1041,14 +1214,19 @@
     .form-consent a { color: var(--orange-text); }
     .hp-field { position: absolute; left: -9999px; }
     .form-success {
-      padding: 20px;
-      background: rgba(255,62,7,0.08);
+      padding: 60px 40px;
+      background: rgba(255,62,7,0.06);
+      border-radius: 12px;
       text-align: center;
-      font-size: 0.9rem;
+      font-size: 1.1rem;
       font-weight: 500;
       display: none;
+      line-height: 1.6;
     }
-    .form-success.show { display: block; }
+    .form-success.show { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; }
+    .form-success-icon { font-size: 3rem; margin-bottom: 16px; }
+    .form-success h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+    .form-success p { color: var(--gray-400); font-size: 0.95rem; }
     .btn-submit {
       display: inline-flex;
       align-items: center;
@@ -1140,13 +1318,36 @@
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
-      .hero h1 { font-size: clamp(2.4rem, 10vw, 3.6rem); }
-      .hero::before { width: 100%; right: 0; border-radius: 0; top: auto; bottom: 0; height: 30%; }
-      .hero::after { width: 100px; height: 100px; bottom: 4%; right: 6%; }
-      .hero-meta { flex-direction: column; gap: 16px; }
-      .hero-stats { flex-direction: column; }
-      .hero-stat { border-right: 1px solid var(--gray-200); border-bottom: none; }
-      .hero-stat:last-child { border-bottom: 1px solid var(--gray-200); }
+      .burger { display: block; }
+      .hero {
+        background: url('images/KPSM main picture.png') center top / cover no-repeat;
+        min-height: auto;
+      }
+      .hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,0.95) 100%);
+        z-index: 1;
+      }
+      .hero > .container { grid-template-columns: 1fr; position: relative; z-index: 2; }
+      .hero h1 { font-size: clamp(2rem, 8vw, 2.6rem); margin-bottom: 4px; line-height: 1.1; }
+      .hero h1 span[style*="white-space"] { display: block; }
+      .hero-content { max-width: none; margin-left: 0; padding-top: 68px; padding-bottom: 8px; }
+      .hero-badge { margin-bottom: 8px; font-size: 0.62rem; padding: 4px 10px; }
+      .hero-sub { margin-bottom: 8px; font-size: 0.78rem; line-height: 1.5; }
+      .hero-visual { display: none; }
+      .hero-meta { flex-direction: row; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+      .hero-meta-item { padding: 0; }
+      .hero-meta-label { font-size: 0.52rem; }
+      .hero-meta-value { font-size: 0.75rem; }
+      .hero-actions { gap: 8px; flex-direction: row !important; align-items: center !important; }
+      .hero .btn-primary, .hero .btn-outline { padding: 10px 18px; font-size: 0.66rem; white-space: nowrap; }
+      .hero-stats { flex-direction: row; display: flex; margin-top: 20px; margin-bottom: 8px; width: 100%; }
+      .hero-stat { border-right: 1px solid rgba(0,0,0,0.1); border-bottom: none; padding: 10px 8px; flex: 1; min-width: 0; }
+      .hero-stat:last-child { border-right: none; }
+      .hero-stat-num { font-size: 1.4rem !important; }
+      .hero-stat-label { font-size: 0.5rem; }
       .speakers-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .testimonial:nth-child(2) { margin-top: 0; }
@@ -1160,7 +1361,7 @@
     @media (max-width: 500px) {
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-      .hero-actions { flex-direction: column; align-items: flex-start; }
+      .hero-actions { flex-direction: row; align-items: center; }
     }
   </style>
 </head>
@@ -1175,59 +1376,75 @@
       </a>
       <ul class="nav-links">
         <li><a href="#speakers">Speakers</a></li>
-        <li><a href="#programme">Programme</a></li>
+        <li><a href="#schedule">Programme</a></li>
         <li><a href="#venue">Venue</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#register" class="nav-register">Register</a></li>
+        <li><a href="https://fienta.com/kpsm-kaunas-plastic-surgery-meeting-2026" class="nav-register" target="_blank">Buy tickets</a></li>
       </ul>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#schedule">Programme</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://fienta.com/kpsm-kaunas-plastic-surgery-meeting-2026" class="nav-register" target="_blank">Buy tickets</a></li>
+    </ul>
+  </div>
 
   <!-- ===== HERO ===== -->
   <main id="main">
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge reveal">{{hero.badge}}</div>
-        <h1 class="reveal delay-1">{{hero.title_line1}}<br>{{hero.title_line2}}<br><span class="accent">{{hero.title_accent}}</span></h1>
-        <p class="hero-sub reveal delay-2">{{hero.subtitle}}</p>
-        <div class="hero-meta reveal delay-3">
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Location</span>
-            <span class="hero-meta-value">{{hero.location}}</span>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge reveal">{{hero.badge}}</div>
+          <h1 class="reveal delay-1">{{hero.title_line1}} <span style="white-space:nowrap">{{hero.title_line2}}</span><br><span class="accent">{{hero.title_accent}}</span></h1>
+          <p class="hero-sub reveal delay-2">{{hero.subtitle}}</p>
+          <div class="hero-meta reveal delay-3">
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Location</span>
+              <span class="hero-meta-value">{{hero.location}}</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Duration</span>
+              <span class="hero-meta-value">{{hero.duration}}</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">CME Credits</span>
+              <span class="hero-meta-value">{{hero.credits}}</span>
+            </div>
           </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">Duration</span>
-            <span class="hero-meta-value">{{hero.duration}}</span>
+          <div class="hero-actions reveal delay-4">
+            <a href="https://fienta.com/kpsm-kaunas-plastic-surgery-meeting-2026" class="btn-primary" target="_blank">
+              Buy tickets
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#schedule" class="btn-outline">
+              View programme
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
           </div>
-          <div class="hero-meta-item">
-            <span class="hero-meta-label">CME Credits</span>
-            <span class="hero-meta-value">{{hero.credits}}</span>
+          <div class="hero-stats reveal delay-5">
+            <div class="hero-stat">
+              <div class="hero-stat-num">{{hero.stat_speakers}}</div>
+              <div class="hero-stat-label">Speakers</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">{{hero.stat_countries}}</div>
+              <div class="hero-stat-label">Countries</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num" style="font-size:25px;letter-spacing:0.08em;text-transform:uppercase">Gala Dinner</div>
+            </div>
           </div>
         </div>
-        <div class="hero-actions reveal delay-4">
-          <a href="#register" class="btn-primary">
-            Buy tickets
-            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="#programme" class="btn-outline">
-            View programme
-            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-        <div class="hero-stats reveal delay-5">
-          <div class="hero-stat">
-            <div class="hero-stat-num">{{hero.stat_speakers}}</div>
-            <div class="hero-stat-label">Speakers</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">{{hero.stat_countries}}</div>
-            <div class="hero-stat-label">Countries</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">{{hero.stat_attendees}}</div>
-            <div class="hero-stat-label">Attendees</div>
-          </div>
+        <div class="hero-visual">
+          <img class="hero-visual-face" src="images/KPSM main picture.png" alt="KPSM — Kaunas Plastic Surgery Meeting">
         </div>
       </div>
     </div>
@@ -1279,6 +1496,15 @@
     </div>
   </section>
 
+  <!-- ===== PARTNERS ===== -->
+  <div class="partners-strip">
+    <div class="container">
+      <img src="images/partner-mentor.webp" alt="Mentor" loading="lazy">
+      <img src="images/partner-polytech.png" alt="Polytech" loading="lazy">
+      <img src="images/partner-asset2.png" alt="Partner" loading="lazy">
+    </div>
+  </div>
+
   <!-- ===== TESTIMONIALS ===== -->
   <section class="testimonials" id="testimonials" aria-label="Testimonials">
     <div class="container">
@@ -1313,12 +1539,8 @@
               <div class="venue-detail-value">{{venue.airport}}</div>
             </div>
             <div class="venue-detail">
-              <div class="venue-detail-label">Getting There</div>
+              <div class="venue-detail-label">Getting to Kaunas</div>
               <div class="venue-detail-value">{{venue.transport}}</div>
-            </div>
-            <div class="venue-detail">
-              <div class="venue-detail-label">Hotels</div>
-              <div class="venue-detail-value">{{venue.hotels}}</div>
             </div>
           </div>
         </div>
@@ -1334,12 +1556,6 @@
           <p class="section-label">Get in Touch</p>
           <h2>Questions about<br>the meeting?</h2>
           <p>Whether you need information about registration, abstract submission, sponsorship, or travel — our team is here to help.</p>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="contact-info-text"><a href="mailto:{{footer.email}}">{{footer.email}}</a></div>
-          </div>
           <div class="contact-info-item">
             <div class="contact-info-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -1382,14 +1598,18 @@
             Send message
             <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
-          <div class="form-success" id="cf-success">Thank you! Your message has been sent. We'll get back to you shortly.</div>
         </form>
+          <div class="form-success" id="cf-success">
+            <div class="form-success-icon">&#10003;</div>
+            <h3>Message sent!</h3>
+            <p>Thank you for reaching out. We'll get back to you shortly.</p>
+          </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
-  <section class="cta-section" id="register" aria-label="Registration">
+  <section class="cta-section" id="tickets" aria-label="Registration">
     <div class="container">
       <div class="reveal">
         <p class="section-label" style="color: rgba(255,255,255,0.7);">Secure Your Place</p>
@@ -1399,7 +1619,7 @@
           <div class="cta-price">{{cta.price}}</div>
           <div class="cta-price-note">{{cta.price_note}}</div>
         </div>
-        <a href="{{cta.button_link}}" class="btn-white">
+        <a href="{{cta.button_link}}" target="_blank" class="btn-white">
           {{cta.button_text}}
           <svg class="btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -1422,7 +1642,7 @@
         <div class="footer-col">
           <h4>Meeting</h4>
           <ul>
-            <li><a href="#programme">Programme</a></li>
+            <li><a href="#schedule">Programme</a></li>
             <li><a href="#speakers">Faculty</a></li>
             <li><a href="#programme">Tracks</a></li>
             <li><a href="#venue">Venue</a></li>
@@ -1431,7 +1651,7 @@
         <div class="footer-col">
           <h4>Attend</h4>
           <ul>
-            <li><a href="#register">Registration</a></li>
+            <li><a href="https://fienta.com/kpsm-kaunas-plastic-surgery-meeting-2026" target="_blank">Buy tickets</a></li>
             <li><a href="#venue">Travel & Venue</a></li>
             <li><a href="#contact">Contact Us</a></li>
             <li><a href="/terms.html">Terms</a></li>
@@ -1440,7 +1660,6 @@
         <div class="footer-col">
           <h4>Connect</h4>
           <ul>
-            <li><a href="mailto:{{footer.email}}">{{footer.email}}</a></li>
             <li><a href="#contact">Contact Form</a></li>
             <li><a href="/privacy.html">Privacy Policy</a></li>
             <li><a href="/cookies.html">Cookie Policy</a></li>
@@ -1481,6 +1700,24 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    /* ===== Burger menu ===== */
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      burger.classList.toggle('active');
+      burger.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        burger.classList.remove('active');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
 
     /* ===== Sticky nav ===== */
     const nav = document.getElementById('nav');
@@ -1555,7 +1792,7 @@
         submitBtn.textContent = 'Sending...';
 
         try {
-          const resp = await fetch('/api/contact', {
+          const resp = await fetch('/api/contact.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, subject: form.subject.value.trim(), message }),
