@@ -1310,7 +1310,8 @@
     /* ============ RESPONSIVE ============ */
     @media (max-width: 1000px) {
       .speakers-grid { grid-template-columns: repeat(2, 1fr); }
-      .sessions-grid { grid-template-columns: 1fr; gap: 0; }
+      .sessions-grid { grid-template-columns: 1fr; grid-auto-rows: auto; gap: 0; }
+      .session-card-filler { display: none; }
       .schedule-days { grid-template-columns: 1fr; }
       .venue-inner { grid-template-columns: 1fr; gap: 48px; }
       .venue-visual { height: 320px; }
